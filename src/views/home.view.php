@@ -6,7 +6,8 @@ $title = 'Page d\'accueil';
 <link rel="stylesheet" href="./public/css/style.css" />
 
 <section>
-  <h1>Page d'accueil</h1>
+  <h1>Bienvenue ! <?= $_SESSION['pseudo'] ?? ''; ?> </h1>
+
 </section>
 
 <?php
