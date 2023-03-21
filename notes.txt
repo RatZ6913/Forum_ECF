@@ -1,0 +1,17 @@
+A CODER : 
+
+1:/ Système d'inscriptions ( Avec sécurité ...)
+2:/ Système de connexion et auth sécurisé
+3:/ Système de déconnexion
+4:/ Publier, modifier, accéder et supprimer un topic 
+5:/ Ajout de messages et réponses aux message existants
+6:/ Afficher, modifier et personnaliser son profil
+
+
+
+
+
+
+
+Créer diagramme UML ou modèle conceptuel MERISE de la base de données
+BDD : User & Topic & message & image & comment
