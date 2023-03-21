@@ -109,8 +109,20 @@ form {
   align-items: center;
 }
 
+.flex-fill {
+  flex: 1 1 auto;
+}
+
 /* Classes utilitaires Margin | Padding */
-.m20 {
+.m-5 {
+  margin: 5px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+
+.m-20 {
   margin: 20px;
 }
 
@@ -130,6 +142,15 @@ form {
   margin-bottom: 20px;
 }
 
+.p-0 {
+  padding: 0px;
+}
+
 .p20 {
   padding: 20px;
+}
+
+/* BORDER  */
+.border {
+  border: var(--border);
 }

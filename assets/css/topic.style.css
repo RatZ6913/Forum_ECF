@@ -18,13 +18,13 @@ article {
 }
 
 div {
-  border: var(--border);
+  /* border: var(--border); */
   padding: 20px;
   margin: 10px;
 }
 
 p {
-  border: var(--border);
+  /* border: var(--border); */
   margin: 5px;
   padding: 5px;
 }

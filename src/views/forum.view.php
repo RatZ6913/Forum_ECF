@@ -28,11 +28,15 @@ $message = new Message();
 
       <?php foreach ($message->getMessagesSubject() as $subjects) : ?>
         <?php if ($categories['id'] == $subjects['id_topics']) : ?>
-          <div>
-            <p><?= $subjects['title']; ?></p>
-            <p><?= $subjects['pseudo']; ?></p>
-            <p><?= $subjects['date']; ?></p>
-          </div>
+          <section class="d-flex border m-5">
+            <div class="d-flex flex-fill m-5 p-0">
+              <p><?= $subjects['title']; ?></p>
+            </div>
+            <div class="d-flex m-5 p-0">
+              <p><?= $subjects['pseudo']; ?></p>
+              <p><?= $subjects['date']; ?></p>
+            </div>
+          </section>
         <?php endif; ?>
       <?php endforeach; ?>
     <?php endforeach; ?>
