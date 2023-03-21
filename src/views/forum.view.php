@@ -29,11 +29,11 @@ $message = new Message();
       <?php foreach ($message->getMessagesSubject() as $subjects) : ?>
         <?php if ($categories['id'] == $subjects['id_topics']) : ?>
           <section class="d-flex border m-5">
-            <div class="d-flex flex-fill m-5 p-0">
-              <p><?= $subjects['title']; ?></p>
+            <div class="d-flex flex-fill m-5 p-0 items-center">
+              <a href="./?action=forum"><?= $subjects['title']; ?></a>
             </div>
             <div class="d-flex m-5 p-0 items-center">
-              <small class="underline">User:</small><p class="blue"><?= $subjects['pseudo']; ?></p>
+              <small class="blue mr-5"><?= $subjects['pseudo']; ?></small>
               <small class="italic"><?= $subjects['date']; ?></small>
             </div>
           </section>
