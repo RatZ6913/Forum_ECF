@@ -1,8 +1,20 @@
 <?php
 
-
 require_once __DIR__ . './src/models/autoload.php';
 
-$db = new Database();
+try {
+  if(!empty($_GET) && isset($_GET)){
+    $_GET['action'] = $_GET['action'] ?? '';
 
-var_dump($db);
+
+
+
+  } else {
+    require_once __DIR__ . './src/controllers/main.controllers.php';
+    getMainTemplate();
+  }
+
+
+} catch (Exception $e) {
+  throw new Exception($e->getMessage());
+}
