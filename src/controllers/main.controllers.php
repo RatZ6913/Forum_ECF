@@ -14,3 +14,8 @@ function getViewDisconnect()
   require_once('./src/views/disconnect.view.php');
   require_once('./src/views/templates/main.template.php');
 }
+
+function getViewError(){
+  require_once('./src/views/error.view.php');
+  require_once('./src/views/templates/main.template.php');
+}
