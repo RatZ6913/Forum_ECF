@@ -19,3 +19,8 @@ function getViewError(){
   require_once('./src/views/error.view.php');
   require_once('./src/views/templates/main.template.php');
 }
+
+function getViewForum(){
+  require_once('./src/views/forum.view.php');
+  require_once('./src/views/templates/main.template.php');
+}

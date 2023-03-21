@@ -21,11 +21,13 @@ try {
       getViewProfil();
     } else if ($_GET['action'] === 'disconnect'){
       getViewDisconnect();   
+    } else if ($_GET['action'] === 'forum'){
+      getViewForum();
     }
 
   } else {
     getViewHomePage();
-    // getViewErro();
+    // getViewError();
   }
 
 
