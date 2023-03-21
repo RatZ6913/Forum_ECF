@@ -15,7 +15,7 @@ $title = 'Profil';
     <form id="form" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST" enctype='multipart/form-data'>
       <div>
         <label for="avatar">Avatar :</label>
-        <input type="file" name="post" id="avatar" value="<?= $_SESSION['avatar'] ?? 'default_avatar.png'; ?>">
+        <input type="file" name="post" id="avatar" value="<?= $_SESSION['avatar'] ?? 'default.png'; ?>">
         <span id="uploadImage">* < 5MO, Gif,JPEG,JPG,GIF</span>
             <p class="errors"><?= $status['status'] ?? ''; ?></p>
       </div>
@@ -25,9 +25,9 @@ $title = 'Profil';
         <p class="errors"><?= $errors['pseudo'] ?? '' ?></p>
       </div>
       <div>
-        <label for="mail">Mail :</label>
-        <input type="mail" name="mail" id="mail" value="<?= $_SESSION['mail'] ?? ''; ?>">
-        <p class="errors"><?= $errors['mail'] ?? '' ?></p>
+        <label for="email">email :</label>
+        <input type="email" name="email" id="email" value="<?= $_SESSION['email'] ?? ''; ?>">
+        <p class="errors"><?= $errors['email'] ?? '' ?></p>
       </div>
       <div>
         <label for="password">Mot de passe :</label>

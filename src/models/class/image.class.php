@@ -1,6 +1,5 @@
 <?php
-
-require_once('./database.class.php');
+require_once __DIR__ . './database.class.php';
 
 class Image extends Database
 {
