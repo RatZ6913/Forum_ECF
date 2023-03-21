@@ -66,7 +66,7 @@ function getViewRegister()
       $password = password_hash($password, PASSWORD_BCRYPT);
       $adduser = [
         "pseudo" => $pseudo,
-        "eemail" => $email,
+        "email" => $email,
         "password" => $password,
       ];
       $user = new User();

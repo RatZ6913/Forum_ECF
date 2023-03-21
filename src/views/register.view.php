@@ -15,8 +15,8 @@ $title = 'Inscription';
       <input class="input" type="text" name="pseudo" id="pseudo">
       <p class="errors"><?= $errors['pseudo'] ?? ''; ?> </p>
       <p>E-mail :</p>
-      <input class="input" type="email" name="mail">
-      <p class="errors"><?= $errors['mail'] ?? ''; ?> </p>
+      <input class="input" type="email" name="email">
+      <p class="errors"><?= $errors['email'] ?? ''; ?> </p>
       <p>Mot de passe :</p>
       <input class="input" type="password" name="password">
       <p class="errors"> <?= $errors['password'] ?? ''; ?> </p>
