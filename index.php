@@ -19,6 +19,8 @@ try {
     } else if ($_GET['action'] === 'profil'){
       require_once('./src/controllers/profil.controllers.php');
       getViewProfil();
+    } else if ($_GET['action'] === 'disconnect'){
+      getViewDisconnect();   
     }
 
   } else {
