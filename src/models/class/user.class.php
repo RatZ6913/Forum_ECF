@@ -9,7 +9,7 @@ class User extends Database
     parent::__construct();
   }
 
-  public function checkIfUserExist(string $pseudo, string $email): bool
+  public function checkIfUserExist(string $pseudo, string $email): bool | array
   {
     $checkIfUserExist = $this->pdo->prepare("SELECT * FROM users WHERE pseudo = :pseudo OR email = :email");
     $checkIfUserExist->bindParam('pseudo', $pseudo);
@@ -18,27 +18,27 @@ class User extends Database
     return $checkIfExist = $checkIfUserExist->fetch();
   }
 
-  public function userRegistered(array $user)
+  public function userRegistered(array $user): bool
   {
     $userRegistered = $this->pdo->prepare("INSERT INTO users (pseudo, email, password) VALUES (:pseudo, :email, :password)");
     return $userRegistered->execute($user);
   }
 
-//   public function checkIfMatchUser(string $pseudo): array
-//   {
-//     $checkIfMatchUser = $this->pdo->prepare("SELECT password FROM users WHERE pseudo = :pseudo");
-//     $checkIfMatchUser->BindParam(':pseudo', $pseudo);
-//     $checkIfMatchUser->execute();
-//     return $checkIfMatch = $checkIfMatchUser->fetch();
-//   }
+  public function checkIfMatchUser(string $pseudo): bool | array
+  {
+    $checkIfMatchUser = $this->pdo->prepare("SELECT password FROM users WHERE pseudo = :pseudo");
+    $checkIfMatchUser->BindParam(':pseudo', $pseudo);
+    $checkIfMatchUser->execute();
+    return $checkIfMatch = $checkIfMatchUser->fetch();
+  }
 
-//   function getInfoUser(string $pseudo): array
-//   {
-//     $getInfoUser = $this->pdo->prepare("SELECT * FROM users WHERE pseudo=:pseudo");
-//     $getInfoUser->BindParam(":pseudo", $pseudo);
-//     $getInfoUser->execute();
-//     return $getInfoUser = $getInfoUser->fetch();
-//   }
+  function getInfoUser(string $pseudo): array | bool
+  {
+    $getInfoUser = $this->pdo->prepare("SELECT * FROM users WHERE pseudo=:pseudo");
+    $getInfoUser->BindParam(":pseudo", $pseudo);
+    $getInfoUser->execute();
+    return $getInfoUser = $getInfoUser->fetch();
+  }
 
 //   function editUserProfil(array $updateProfil): array
 //   {
@@ -47,3 +47,4 @@ class User extends Database
 //     return $updateUserProfil = $editUserProfil->fetch();
 //   }
 // }
+}

@@ -10,6 +10,9 @@ try {
     if($_GET['action'] === 'register'){
       require_once('./src/controllers/register.controllers.php');
       getViewRegister();
+    } else if ($_GET['action'] === 'login'){
+      require_once('./src/controllers/login.controllers.php');
+      getViewLogin();
     }
 
   } else {
