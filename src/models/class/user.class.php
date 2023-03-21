@@ -40,11 +40,10 @@ class User extends Database
     return $getInfoUser = $getInfoUser->fetch();
   }
 
-//   function editUserProfil(array $updateProfil): array
-//   {
-//     $editUserProfil = $this->pdo->prepare("UPDATE users SET pseudo = :pseudo, email = :email, password = :password, avatar = :avatar WHERE id = :id");
-//     $editUserProfil->execute($updateProfil);
-//     return $updateUserProfil = $editUserProfil->fetch();
-//   }
-// }
+  function editUserProfil(array $updateProfil): array | bool
+  {
+    $editUserProfil = $this->pdo->prepare("UPDATE users SET pseudo = :pseudo, email = :email, password = :password, avatar = :avatar WHERE id = :id");
+    $editUserProfil->execute($updateProfil);
+    return $updateUserProfil = $editUserProfil->fetch();
+  }
 }

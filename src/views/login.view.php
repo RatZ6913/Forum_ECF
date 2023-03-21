@@ -13,7 +13,7 @@ $title = 'Connexion';
       <p>Identifiant :</p>
       <input class="input" type="text" name="pseudo" placeholder="pseudo">
       <p>Mot de passe :</p>
-      <input class="input" type="text" name="password" placeholder="mot">
+      <input class="input" type="password" name="password" placeholder="mot">
       <p class="errors"><?= $errors['error'] ?? ''; ?></p>
       <input class="button" type="submit" value="Connexion">
     </form>
