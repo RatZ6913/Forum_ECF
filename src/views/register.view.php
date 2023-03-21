@@ -4,9 +4,8 @@ ob_start();
 $title = 'Inscription';
 
 ?>
-<link rel="stylesheet" href="./public/css/form.style.css" />
 
-<section class="container">
+<section id="container">
   <div id="formConnect">
     <h1>Inscription</h1>
     <p class="para">Saissisez vos informations pour vous connecter</p>

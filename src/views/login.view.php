@@ -3,9 +3,7 @@ ob_start();
 $title = 'Connexion';
 ?>
 
-<link rel="stylesheet" href="./public/css/form.style.css" />
-
-<section class="container">
+<section id="container">
   <div id="formConnect">
     <h1>Connexion</h1>
     <p class="para">Saisissez vos identifiants pour vous connecter</p>
