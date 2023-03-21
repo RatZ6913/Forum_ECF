@@ -154,3 +154,25 @@ form {
 .border {
   border: var(--border);
 }
+
+/* TEXTE  */
+
+.text-center {
+  text-align: center;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.blue {
+  color: blue;
+}

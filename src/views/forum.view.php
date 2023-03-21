@@ -21,7 +21,7 @@ $message = new Message();
   </section>
 
   <article>
-    <h3>Liste des topics</h3>
+    <h3 class="text-center">Liste des topics</h3>
 
     <?php foreach ($topic->getTopicCategory() as $categories) : ?>
       <h4><?= $categories['category']; ?></h4>
@@ -32,9 +32,9 @@ $message = new Message();
             <div class="d-flex flex-fill m-5 p-0">
               <p><?= $subjects['title']; ?></p>
             </div>
-            <div class="d-flex m-5 p-0">
-              <p><?= $subjects['pseudo']; ?></p>
-              <p><?= $subjects['date']; ?></p>
+            <div class="d-flex m-5 p-0 items-center">
+              <small class="underline">User:</small><p class="blue"><?= $subjects['pseudo']; ?></p>
+              <small class="italic"><?= $subjects['date']; ?></small>
             </div>
           </section>
         <?php endif; ?>
