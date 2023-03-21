@@ -32,4 +32,3 @@ try {
 } catch (Exception $e) {
   throw new Exception($e->getMessage());
 }
-var_dump($_SESSION);
