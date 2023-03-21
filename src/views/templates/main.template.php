@@ -7,7 +7,7 @@ require_once __DIR__ . './../includes/head.php';
 
 <body>
   <?php require_once __DIR__ . './../includes/header.php'; ?>
-  <?= $form ?? ''; ?>
+  <?= $form ?? '' ?>
   <?= $content ?? ''; ?>
 </body>
 
