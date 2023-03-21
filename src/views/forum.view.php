@@ -30,6 +30,8 @@ $message = new Message();
         <?php if ($categories['id'] == $subjects['id_topics']) : ?>
           <div>
             <p><?= $subjects['title']; ?></p>
+            <p><?= $subjects['pseudo']; ?></p>
+            <p><?= $subjects['date']; ?></p>
           </div>
         <?php endif; ?>
       <?php endforeach; ?>
