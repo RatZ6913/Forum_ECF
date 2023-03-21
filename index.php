@@ -1,6 +1,7 @@
 <?php
 
 require_once __DIR__ . './src/models/autoload.php';
+require_once __DIR__ . './src/controllers/main.controllers.php';
 
 try {
   if(!empty($_GET) && isset($_GET)){
@@ -10,8 +11,7 @@ try {
 
 
   } else {
-    require_once __DIR__ . './src/controllers/main.controllers.php';
-    getMainTemplate();
+    getViewHomePage();
   }
 
 
