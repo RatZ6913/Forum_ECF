@@ -23,6 +23,11 @@ div {
   margin: 10px;
 }
 
+div a {
+  text-decoration: underline;
+  color: grey;
+}
+
 p {
   /* border: var(--border); */
   margin: 5px;

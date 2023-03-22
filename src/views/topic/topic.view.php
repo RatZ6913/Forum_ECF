@@ -25,6 +25,9 @@ $message = new Message();
               <a href="./?action=forum"><?= $subjects['title']; ?></a>
             </div>
             <div class="d-flex m-5 p-0 items-center">
+              <?php if ($_SESSION['id_user'] === $subjects['id_users']) : ?>
+                <button class="btn mr-10">X</button>
+              <?php endif; ?>
               <small class="blue mr-5"><?= $subjects['pseudo']; ?></small>
               <small class="italic"><?= $subjects['date']; ?></small>
             </div>
@@ -38,3 +41,5 @@ $message = new Message();
 
 <?php
 $content = ob_get_clean();
+var_dump($_SESSION['id_user']);
+var_dump($subjects);
