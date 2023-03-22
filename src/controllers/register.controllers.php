@@ -1,10 +1,10 @@
 <?php
-require_once __DIR__ . './../models/class/user.class.php';
-
 // Si USER est connecté alors, je lui empêche : La Vue Connexion et Inscription
 if (!empty($_SESSION['pseudo'])) {
   header('location: ./');
 }
+
+require_once('./src/models/class/user.class.php');
 
 const ERROR_INPUT = "Ce champ est incorrect";
 const ERROR_CHECK_PASSWORD = "Vos mots de passes ne correspondent pas";
@@ -76,6 +76,6 @@ function getViewRegister()
       }
     }
   }
-  require_once('./src/views/register.view.php');
+  require_once('./src/views/formUser/register.view.php');
   require_once('./src/views/templates/main.template.php');
 }

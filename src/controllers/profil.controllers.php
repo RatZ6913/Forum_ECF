@@ -3,7 +3,7 @@
 if(!session_id()){
   session_start();
 }
-require_once __DIR__ . './../models/autoload.php';
+require_once('./src/models/autoload.php');
 
 // Si USER n'est pas connecté alors, je lui empêche : La Vue Profil (Modification)
 if(empty($_SESSION['pseudo'])){
@@ -88,6 +88,6 @@ function getViewProfil(){
       header('location: ./?action=profil');
     }
   }
-  require_once('./src/views/profil.view.php');
+  require_once('./src/views/formUser/profil.view.php');
   require_once('./src/views/templates/main.template.php');
 }

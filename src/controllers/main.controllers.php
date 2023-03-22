@@ -21,6 +21,6 @@ function getViewError(){
 }
 
 function getViewForum(){
-  require_once('./src/views/forum.view.php');
+  require_once('./src/views/forum/forum.view.php');
   require_once('./src/views/templates/main.template.php');
 }

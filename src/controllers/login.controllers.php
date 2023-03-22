@@ -4,8 +4,7 @@ if(!empty($_SESSION['pseudo'])){
   header('location: ./');
 }
 
-require_once __DIR__ . './../models/class/user.class.php';
-
+require_once('./src/models/class/user.class.php');
 
 
 const ERROR_CONNECT = "Vos identifiants ou mots de passes sont incorrects";
@@ -55,6 +54,6 @@ function getViewLogin()
 			}
 		}
 	}
-  require_once('./src/views/login.view.php');
+  require_once('./src/views/formUser/login.view.php');
   require_once('./src/views/templates/main.template.php');
 }

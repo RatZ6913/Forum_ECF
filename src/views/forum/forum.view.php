@@ -6,7 +6,7 @@ if (empty($_SESSION['pseudo'])) {
 
 ob_start();
 $title = 'Forum';
-require_once __DIR__ . '../../models/autoload.php';
+require_once __DIR__ . '../../../models/autoload.php';
 $topic = new Topic();
 $message = new Message();
 
@@ -17,6 +17,7 @@ $message = new Message();
 <main>
   <section>
     <h2>Les topics</h2>
+    
     <button>Ajouter un sujet</button>
   </section>
 
