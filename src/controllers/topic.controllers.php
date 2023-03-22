@@ -15,47 +15,48 @@ const ERROR_INPUT = 'Ce champ est invalide !';
 
 function getViewForum()
 {
-  $errors = [
-    'error' => '',
-    'alias' => ''
-  ];
-
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $topic = new Topic();
     $message = new Message();
 
+    $errors = [
+      'error' => '',
+      'alias' => ''
+    ];
+
     // Vérifications des champs postForm
-    if (empty($_POST['alias']) || $_POST['alias'] === "") {
-      $errors['alias'] = EMPTY_INPUT;
-    }
+    if (!empty($_POST['submit'])) {
+      if (empty($_POST['alias']) || $_POST['alias'] === "") {
+        $errors['alias'] = EMPTY_INPUT;
+      }
 
-    if (empty($_POST['message'])) {
-      $errors['error'] = ERROR_INPUT;
-    } else if (strlen($_POST['message']) > 35) {
-      $errors['error'] = ERROR_INPUT;
-    }
+      if (empty($_POST['message'])) {
+        $errors['error'] = ERROR_INPUT;
+      } else if (strlen($_POST['message']) > 35) {
+        $errors['error'] = ERROR_INPUT;
+      }
 
-    // Si toutes les vérifications de postForm sont bons alors :
-    if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
-      $idTopic = $topic->getTopicId($_POST['alias'] ?? '');
+      // Si toutes les vérifications de postForm sont bons alors :
+      if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
+        $idTopic = $topic->getTopicId($_POST['alias'] ?? '');
 
-      if ($idTopic) {
-        $idTopic = (int)$idTopic['id'] ?? '';
-        $subject = [
-          'title' => $_POST['message'] ?? '',
-          'id_users' => $_SESSION['id_user'] ?? '',
-          'id_topics' => $idTopic
-        ];
-        $message->addNewSubject($subject);
-        header('location: ./?action=forum');
+        if ($idTopic) {
+          $idTopic = (int)$idTopic['id'] ?? '';
+          $subject = [
+            'title' => $_POST['message'] ?? '',
+            'id_users' => $_SESSION['id_user'] ?? '',
+            'id_topics' => $idTopic
+          ];
+          $message->addNewSubject($subject);
+          header('location: ./?action=forum');
+        }
       }
     }
 
     // Ici les instructions du boutton Supprimer deleteForm 
     if ($_POST['delete'] ?? '') {
-      $idMsg = (int)$_POST['id_message'] ?? '';
-
-      if($idMsg){
+      if ($_POST['id_message']) {
+        $idMsg = (int)$_POST['id_message'] ?? '';
         $message->deleteSubject($idMsg);
       }
     }

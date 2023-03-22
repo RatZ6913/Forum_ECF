@@ -12,6 +12,6 @@ require_once __DIR__ . '../../../models/autoload.php';
   </select>
   <p class="errors"><?= $errors['alias'] ?? ''; ?></p>
   <textarea name="message" placeholder="Entrez votre sujet... (35 caratères max)"></textarea>
-  <input type="submit" value="Publier">
+  <input type="submit" name="submit" value="Publier">
   <p class="errors"><?= $errors['error'] ?? ''; ?></p>
 </form>

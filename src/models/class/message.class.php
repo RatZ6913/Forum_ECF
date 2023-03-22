@@ -14,10 +14,9 @@ class Message extends Database
     return $getAllSubjetcs = $getSubjects->fetchAll();
   }
 
-  function addNewSubject(array $subject): array | bool {
+  function addNewSubject(array $subject): bool {
     $addSubject = $this->pdo->prepare('INSERT INTO messages (id_users, id_topics, title) VALUES (:id_users, :id_topics, :title)');
-    $addSubject->execute($subject);
-    return $addNewSubject = $addSubject->fetch();
+    return $addSubject->execute($subject);
   }
 
   function deleteSubject(int $idMsg): array | bool {
