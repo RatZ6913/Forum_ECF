@@ -14,12 +14,13 @@ $discussion = new Discussion();
   <article>
     <h3 class="text-center">Liste des messages</h3>
 
-    <?php foreach ($discussion->getMessages($_GET['id']) as $discussions) : ?>
+    <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) : ?>
       <section class="d-flex border m-5">
         <div class="d-flex flex-fill m-5 p-0 items-center">
           <a href=""><?= $discussions['title']; ?></a>
         </div>
-        <div>
+        <div class="p-0">
+          <small class="blue mr-5"><?= $discussions['pseudo']; ?></small>
           <small class="italic"><?= $discussions['date']; ?></small>
         </div>
       </section>
