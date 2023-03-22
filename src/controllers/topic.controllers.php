@@ -15,15 +15,12 @@ const ERROR_INPUT = 'Ce champ est invalide !';
 
 function getViewForum()
 {
-  // require_once('./src/views/topic/form.view.php');
-
   $errors = [
     'error' => '',
     'alias' => ''
   ];
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
     if (empty($_POST['alias']) || $_POST['alias'] === "") {
       $errors['alias'] = EMPTY_INPUT;
     }

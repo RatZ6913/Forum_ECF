@@ -195,8 +195,10 @@ form {
 
 /* BOUTTONS  */
 
-
-#form-topic {
-  width: 50%;
-  border: none;
+.btn {
+  padding: 2px;
+  background-color: white;
+  color: red;
+  border-color:lightslategray;
+  font-size: 12px;
 }

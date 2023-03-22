@@ -1,12 +1,8 @@
 <?php
-
-
-ob_start();
 require_once __DIR__ . '../../../models/autoload.php';
-
 ?>
 
-<form id="form-topic" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">
+<form id="postForm-topic" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">
   <select name="alias" id="alias">
     <option value="">-- Choisissez --</option>
     <option value="observation">Observation</option>
@@ -19,6 +15,3 @@ require_once __DIR__ . '../../../models/autoload.php';
   <input type="submit" value="Publier">
   <p class="errors"><?= $errors['error'] ?? ''; ?></p>
 </form>
-
-<?php
-$form = ob_get_clean();

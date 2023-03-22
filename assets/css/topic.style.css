@@ -33,3 +33,13 @@ p {
   margin: 5px;
   padding: 5px;
 }
+
+#postForm-topic {
+  width: 50%;
+  border: none;
+}
+
+#deleteForm-topic {
+  border: none;
+  padding: 0;
+}
