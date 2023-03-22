@@ -21,4 +21,9 @@ class Discussion extends Database
     return $addNewDiscussion->execute($discussion);
   }
 
+  function deleteDiscussion($idMsg): array | bool {
+    $deleteSubject = $this->pdo->prepare('DELETE FROM discussion WHERE id_d = :idMsg');
+    $deleteSubject->bindParam('idMsg', $idMsg);
+    return $deleteSubject->execute();
+  }
 }

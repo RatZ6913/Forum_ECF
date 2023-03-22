@@ -27,12 +27,16 @@ try {
     } else if ($_GET['action'] === 'message') {
       require_once('./src/controllers/message.controllers.php');
       getViewMessage();
+    } else if ($_GET['action'] === 'comment'){
+      require_once('./src/controllers/comment.controllers.php');
+      getViewComment();
     }
 
   } else {
     getViewHomePage();
     // getViewError();
   }
+
 
 } catch (Exception $e) {
   throw new Exception($e->getMessage());

@@ -14,10 +14,11 @@ $discussion = new Discussion();
   <article>
     <h3 class="text-center">Sujets de : "<?= $message->getTitle($_GET['id'])['title']; ?>"</h3>
 
-    <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) : ?>
+    <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) :
+    ?>
       <section class="d-flex border m-5">
         <div class="d-flex flex-fill m-5 p-0 items-center">
-          <a href=""><?= $discussions['title']; ?></a>
+          <a href="./?action=comment&id=<?= $discussions['id_d']; ?>"><?= $discussions['title']; ?></a>
         </div>
         <div class="p-0">
           <?php
@@ -25,6 +26,7 @@ $discussion = new Discussion();
             // Appelle la Vue deleteForm.view 
             require __DIR__ . './deleteForm.view.php';
           }
+          echo $discussions['id_d'];
           ?>
           <small class="blue mr-5"><?= $discussions['pseudo']; ?></small>
           <small class="italic"><?= $discussions['date']; ?></small>

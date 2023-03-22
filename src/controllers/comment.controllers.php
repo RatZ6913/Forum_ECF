@@ -13,8 +13,7 @@ require_once('./src/models/autoload.php');
 const EMPTY_INPUT = 'Veuillez sélectionner ce champ !';
 const ERROR_INPUT = 'Ce champ est invalide !';
 
-function getViewMessage()
-{
+function getViewComment(){
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $discussion = new Discussion();
@@ -40,19 +39,17 @@ function getViewMessage()
           'title' => $_POST['discussion']
         ];
         $discussion->addNewDiscussion($newDiscussion);
-        header("Location: ./?action=message&id=" . $_GET['id']);
       }
     }
 
     // Ici les instructions du boutton Supprimer deleteForm 
-    if ($_POST['delete'] ?? '') {
-      if ($_POST['id_message']) {
-        $idMsg = (int)$_POST['id_message'] ?? '';
-        $discussion->deleteDiscussion($idMsg);
-      }
-    }
+    // if ($_POST['delete'] ?? '') {
+    //   if ($_POST['id_message']) {
+    //     $idMsg = (int)$_POST['id_message'] ?? '';
+    //     $message->deleteSubject($idMsg);
+    //   }
+    // }
   }
-
-  require_once('./src/views/forum/message/message.view.php');
+  require_once('./src/views/forum/comment/comment.view.php');
   require_once('./src/views/templates/main.template.php');
 }
