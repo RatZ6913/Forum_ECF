@@ -15,8 +15,8 @@ class Message extends Database
   }
 
   function addNewSubject(array $subject){
-    $addSubject = $this->pdo->prepare('INSERT INTO messages (title, id_users, id_topics) VALUES (:title, :idUser, :idTopic)');
-    return $addSubject->execute($subject);
-    // return $addNewSubject = $addSubject->fetch();
+    $addSubject = $this->pdo->prepare('INSERT INTO messages (id_users, id_topics, title) VALUES (:id_users, :id_topics, :title)');
+    $addSubject->execute($subject);
+    return $addNewSubject = $addSubject->fetch();
   }
 }

@@ -1,5 +1,5 @@
 <?php
-if(!session_id()){
+if (!session_id()) {
   session_start();
 }
 
@@ -37,20 +37,22 @@ function getViewForum()
 
   if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
     $topic = new Topic();
+    $message = new Message();
+    $idTopic = $topic->getTopicId($_POST['alias'] ?? '');
+    $idTopic = (int)$idTopic['id'];
 
+    $subject = [
+      'title' => $_POST['message'] ?? '',
+      'id_users' => $_SESSION['id_user'],
+      'id_topics' => ((int)$idTopic) ?? ''
+    ];
 
-    // $topic->getTopicId($_POST['alias']) || (ça marche) : $idTopic
-    // $_SESSION['id_user'] || (ça marche) : $idUser
-    // $_POST['message'] ||(ça marche) : $title
-    
+    if($message->addNewSubject($subject)){
+      header('location: ./?action=forum');
+    }
+
   }
 
-  // require_once('./src/views/topic/form.view.php');
   require_once('./src/views/topic/topic.view.php');
   require_once('./src/views/templates/main.template.php');
 }
-
-
-// var_dump($_POST['message']);
-// var_dump($errors ?? '');
-// var_dump($_SESSION['id_user']);
