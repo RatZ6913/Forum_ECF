@@ -13,6 +13,14 @@
   box-sizing: border-box;
 }
 
+.errors {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
 /* Header & Barre de navigation  */
 nav {
   display: flex;
@@ -186,3 +194,9 @@ form {
 }
 
 /* BOUTTONS  */
+
+
+#form-topic {
+  width: 50%;
+  border: none;
+}

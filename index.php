@@ -22,6 +22,7 @@ try {
     } else if ($_GET['action'] === 'disconnect'){
       getViewDisconnect();   
     } else if ($_GET['action'] === 'forum'){
+      require_once('./src/controllers/topic.controllers.php');
       getViewForum();
     }
 

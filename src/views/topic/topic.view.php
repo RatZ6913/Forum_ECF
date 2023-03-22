@@ -1,8 +1,4 @@
 <?php
-// Si USER est pas connecté alors, je lui empêche : La Vue Forum
-if (empty($_SESSION['pseudo'])) {
-  header('location: ./');
-}
 
 ob_start();
 $title = 'Forum';
@@ -15,18 +11,12 @@ $message = new Message();
 <link rel="stylesheet" href="./assets/css/topic.style.css" type="text/css">
 
 <main>
-  <section>
-    <h2>Les topics</h2>
-    
-    
-    
-  </section>
 
   <article>
     <h3 class="text-center">Liste des topics</h3>
 
     <?php foreach ($topic->getTopicCategory() as $categories) : ?>
-      <h4><?= $categories['category']; ?></h4>
+      <h4><?= $categories['category']; ?> <small>(<?= $categories['alias']; ?>)</small> </h4>
 
       <?php foreach ($message->getMessagesSubject() as $subjects) : ?>
         <?php if ($categories['id'] == $subjects['id_topics']) : ?>
@@ -42,8 +32,8 @@ $message = new Message();
         <?php endif; ?>
       <?php endforeach; ?>
     <?php endforeach; ?>
-
   </article>
+  <?php require_once('./src/views/topic/form.view.php'); ?>
 </main>
 
 <?php
