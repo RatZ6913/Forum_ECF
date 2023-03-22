@@ -41,10 +41,11 @@ function getViewForum()
         $idTopic = $topic->getTopicId($_POST['alias'] ?? '');
 
         if ($idTopic) {
-          $idTopic = (int)$idTopic['id'] ?? '';
+          $idTopic = (int)$idTopic['id_t'] ?? '';
+          $idUser = (int)$_SESSION['id_user'] ?? '';
           $subject = [
             'title' => $_POST['message'] ?? '',
-            'id_users' => $_SESSION['id_user'] ?? '',
+            'id_users' => $idUser,
             'id_topics' => $idTopic
           ];
           $message->addNewSubject($subject);
@@ -61,6 +62,6 @@ function getViewForum()
       }
     }
   }
-  require_once('./src/views/topic/topic.view.php');
+  require_once('./src/views/forum/topic.view.php');
   require_once('./src/views/templates/main.template.php');
 }

@@ -42,7 +42,7 @@ class User extends Database
 
   function editUserProfil(array $updateProfil): array | bool
   {
-    $editUserProfil = $this->pdo->prepare("UPDATE users SET pseudo = :pseudo, email = :email, password = :password, avatar = :avatar WHERE id = :id");
+    $editUserProfil = $this->pdo->prepare("UPDATE users SET pseudo = :pseudo, email = :email, password = :password, avatar = :avatar WHERE id_u = :idUser");
     $editUserProfil->execute($updateProfil);
     return $updateUserProfil = $editUserProfil->fetch();
   }

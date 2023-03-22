@@ -68,7 +68,7 @@ function getViewProfil(){
       }
 
       $updateProfil = [
-        'id' => $_SESSION['id_user'],
+        'idUser' => $_SESSION['id_user'],
         'pseudo' => $pseudo,
         'email' => $email,
         'password' => $password,
@@ -78,7 +78,7 @@ function getViewProfil(){
       $user->editUserProfil($updateProfil);
       
       $_SESSION = [
-        'id_user' => $user->getInfoUser($pseudo)['id'],
+        'id_user' => $user->getInfoUser($pseudo)['id_u'],
         'pseudo' => $pseudo,
         'email' => $email,
         'avatar' => substr(md5($_FILES['post']['name']), 0, 8) . '.' . $mimeType

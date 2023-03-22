@@ -45,7 +45,7 @@ function getViewLogin()
 			$checkPassword = $user->checkIfMatchUser($pseudo)['password'];
 			if (password_verify($password, $checkPassword)) {
 				$_SESSION = [
-					'id_user' => $user->getInfoUser($pseudo)['id'],
+					'id_user' => $user->getInfoUser($pseudo)['id_u'],
 					'pseudo' => $user->getInfoUser($pseudo)['pseudo'],
 					'email' => $user->getInfoUser($pseudo)['email'],
 					'avatar' => $user->getInfoUser($pseudo)['avatar']

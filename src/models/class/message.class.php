@@ -9,7 +9,7 @@ class Message extends Database
   }
 
   function getMessagesSubject(): array | bool {
-    $getSubjects = $this->pdo->prepare('SELECT messages.* , users.id , users.pseudo FROM messages INNER JOIN users WHERE messages.id_users = users.id');
+    $getSubjects = $this->pdo->prepare('SELECT messages.* , users.id_u , users.pseudo FROM messages INNER JOIN users WHERE messages.id_users = users.id_u ORDER BY date DESC');
     $getSubjects->execute();
     return $getAllSubjetcs = $getSubjects->fetchAll();
   }

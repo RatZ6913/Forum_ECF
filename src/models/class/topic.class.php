@@ -15,7 +15,7 @@ class Topic extends Database
   }
 
   function getTopicId($alias): array | bool {
-    $getTopicId = $this->pdo->prepare("SELECT id FROM topics WHERE alias = :alias");
+    $getTopicId = $this->pdo->prepare("SELECT id_t FROM topics WHERE alias = :alias");
     $getTopicId->bindParam('alias', $alias);
     $getTopicId->execute();
     return $getId = $getTopicId->fetch();

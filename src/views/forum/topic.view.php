@@ -11,7 +11,7 @@ $message = new Message();
 
 <main>
   <!-- // Appelle la Vue postForm.view  -->
-  <?php require_once('./src/views/topic/postForm.view.php'); ?>
+  <?php require_once('./src/views/forum/postForm.view.php'); ?>
 
   <article>
     <h3 class="text-center">Liste des topics</h3>
@@ -23,10 +23,10 @@ $message = new Message();
       <!-- Deuxième Boucle qui va afficher les Sujets/Messages des différents topics -->
       <?php foreach ($message->getMessagesSubject() as $subjects) : ?>
         <!-- Condition si : ID table MESSAGES correspond à ID de table TOPICS, Alors affiche les posts  -->
-        <?php if ($categories['id'] == $subjects['id_topics']) : ?>
+        <?php if ($categories['id_t'] == $subjects['id_topics']) : ?>
           <section class="d-flex border m-5">
             <div class="d-flex flex-fill m-5 p-0 items-center">
-              <a href="./?action=forum"><?= $subjects['title']; ?></a>
+              <a href="./?action=message"><?= $subjects['title']; ?></a>
             </div>
 
             <div class="d-flex m-5 p-0 items-center">
@@ -34,7 +34,7 @@ $message = new Message();
               <?php
               if ($_SESSION['id_user'] === $subjects['id_users']) {
                 // Appelle la Vue deleteForm.view 
-                require('./src/views/topic/deleteForm.view.php');
+                require('./src/views/forum/deleteForm.view.php');
               }
               ?>
               <small class="blue mr-5"><?= $subjects['pseudo']; ?></small>
