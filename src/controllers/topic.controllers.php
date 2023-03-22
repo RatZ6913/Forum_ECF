@@ -32,7 +32,7 @@ function getViewForum()
 
       if (empty($_POST['message'])) {
         $errors['error'] = ERROR_INPUT;
-      } else if (strlen($_POST['message']) > 35) {
+      } else if (strlen($_POST['message']) > 45) {
         $errors['error'] = ERROR_INPUT;
       }
 

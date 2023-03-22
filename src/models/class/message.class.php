@@ -24,4 +24,11 @@ class Message extends Database
     $deleteSubject->bindParam('idMsg', $idMsg);
     return $deleteSubject->execute();
   }
+
+  function getTitle($idMsg){
+    $getTitle = $this->pdo->prepare("SELECT title FROM messages WHERE id_m = :idMsg");
+    $getTitle->bindParam('idMsg', $idMsg);
+    $getTitle->execute();
+    return $getTitleOne = $getTitle->fetch();
+  }
 }

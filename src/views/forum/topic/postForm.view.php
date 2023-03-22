@@ -12,7 +12,7 @@ require_once('./src/models/autoload.php');
     <option value="nourriture">Nourriture</option>
   </select>
   <p class="errors"><?= $errors['alias'] ?? ''; ?></p>
-  <textarea name="message" placeholder="Entrez votre sujet... (35 caratères max)"></textarea>
+  <textarea name="message" placeholder="Entrez votre sujet... (45 caratères max)"></textarea>
   <input type="submit" name="submit" value="Publier">
   <p class="errors"><?= $errors['error'] ?? ''; ?></p>
 </form>
