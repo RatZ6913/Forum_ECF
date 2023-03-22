@@ -62,6 +62,6 @@ function getViewForum()
       }
     }
   }
-  require_once('./src/views/forum/topic.view.php');
+  require_once('./src/views/forum/topic/topic.view.php');
   require_once('./src/views/templates/main.template.php');
 }

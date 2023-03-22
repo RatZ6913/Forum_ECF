@@ -24,6 +24,9 @@ try {
     } else if ($_GET['action'] === 'forum'){
       require_once('./src/controllers/topic.controllers.php');
       getViewForum();
+    } else if ($_GET['action'] === 'message') {
+      require_once('./src/controllers/message.controllers.php');
+      getViewMessage();
     }
 
   } else {

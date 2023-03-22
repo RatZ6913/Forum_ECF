@@ -1,7 +1,7 @@
 <?php
 ob_start();
 $title = 'Forum';
-require_once __DIR__ . '../../../models/autoload.php';
+require_once('./src/models/autoload.php');
 $topic = new Topic();
 $message = new Message();
 
@@ -11,7 +11,7 @@ $message = new Message();
 
 <main>
   <!-- // Appelle la Vue postForm.view  -->
-  <?php require_once('./src/views/forum/postForm.view.php'); ?>
+  <?php require_once __DIR__ . './postForm.view.php'; ?>
 
   <article>
     <h3 class="text-center">Liste des topics</h3>
@@ -26,7 +26,7 @@ $message = new Message();
         <?php if ($categories['id_t'] == $subjects['id_topics']) : ?>
           <section class="d-flex border m-5">
             <div class="d-flex flex-fill m-5 p-0 items-center">
-              <a href="./?action=message"><?= $subjects['title']; ?></a>
+              <a href="./?action=message&id=<?= $subjects['id_m']; ?>"><?= $subjects['title']; ?></a>
             </div>
 
             <div class="d-flex m-5 p-0 items-center">
@@ -34,7 +34,7 @@ $message = new Message();
               <?php
               if ($_SESSION['id_user'] === $subjects['id_users']) {
                 // Appelle la Vue deleteForm.view 
-                require('./src/views/forum/deleteForm.view.php');
+                require __DIR__ . './deleteForm.view.php';
               }
               ?>
               <small class="blue mr-5"><?= $subjects['pseudo']; ?></small>

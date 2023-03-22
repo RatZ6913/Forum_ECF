@@ -1,5 +1,6 @@
 <?php
-require_once __DIR__ . '../../../models/autoload.php';
+require_once('./src/models/autoload.php');
+
 ?>
 
 <form id="postForm-topic" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">
