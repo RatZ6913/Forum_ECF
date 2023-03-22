@@ -18,7 +18,8 @@ $message = new Message();
   <section>
     <h2>Les topics</h2>
     
-    <button>Ajouter un sujet</button>
+    
+    
   </section>
 
   <article>
