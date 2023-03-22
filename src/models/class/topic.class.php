@@ -14,7 +14,7 @@ class Topic extends Database
     return $getAllCategory = $getCagetory->fetchAll();
   }
 
-  function getTopicId(string $alias){
+  function getTopicId($alias){
     $getTopicId = $this->pdo->prepare("SELECT id FROM topics WHERE alias = :alias");
     $getTopicId->bindParam('alias', $alias);
     $getTopicId->execute();

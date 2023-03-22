@@ -39,20 +39,19 @@ function getViewForum()
     $topic = new Topic();
     $message = new Message();
     $idTopic = $topic->getTopicId($_POST['alias'] ?? '');
-    $idTopic = (int)$idTopic['id'];
+    
+    if($idTopic){
+      $idTopic = (int)$idTopic['id'] ?? '';
 
-    $subject = [
-      'title' => $_POST['message'] ?? '',
-      'id_users' => $_SESSION['id_user'],
-      'id_topics' => ((int)$idTopic) ?? ''
-    ];
-
-    if($message->addNewSubject($subject)){
+      $subject = [
+        'title' => $_POST['message'] ?? '',
+        'id_users' => $_SESSION['id_user'] ?? '',
+        'id_topics' => $idTopic
+      ];
+      $message->addNewSubject($subject);
       header('location: ./?action=forum');
     }
-
   }
-
   require_once('./src/views/topic/topic.view.php');
   require_once('./src/views/templates/main.template.php');
 }
