@@ -10,6 +10,7 @@ $message = new Message();
 <link rel="stylesheet" href="./assets/css/topic.style.css" type="text/css">
 
 <main>
+  <!-- // Appelle la Vue postForm.view  -->
   <?php require_once('./src/views/topic/postForm.view.php'); ?>
 
   <article>
@@ -29,10 +30,10 @@ $message = new Message();
             </div>
 
             <div class="d-flex m-5 p-0 items-center">
-
-            <!-- Si les Sujets corresponds à l'utilisateur alors affiche les boutons supprimer  -->
+              <!-- Si les Sujets/Messages correspondent à l'utilisateur alors affiche les boutons supprimer  -->
               <?php
               if ($_SESSION['id_user'] === $subjects['id_users']) {
+                // Appelle la Vue deleteForm.view 
                 require('./src/views/topic/deleteForm.view.php');
               }
               ?>
