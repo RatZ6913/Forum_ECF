@@ -7,7 +7,8 @@ $title = 'Page d\'accueil';
 <main>
   <section id="home">
     <h1>Bienvenue ! <span class="blue"> <?= $_SESSION['pseudo'] ?? ''; ?> </span></h1>
-    <p>Ici, regroupe la communauté des chats !</p>
+    <p class="text-center">Ici, regroupe la communauté des chats ! <br>
+      Pour accéder à notre forum, veuillez vous connecter</p>
   </section>
 </main>
 <?php
