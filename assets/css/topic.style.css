@@ -142,3 +142,8 @@ form textarea {
 .btn-del {
   margin-right: 20px;
 }
+
+.count {
+  color: blue;
+  margin-right: 5px;
+}

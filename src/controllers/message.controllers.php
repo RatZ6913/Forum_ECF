@@ -8,14 +8,14 @@ if (empty($_SESSION['pseudo'])) {
   header('location: ./');
 }
 
-require_once('./src/models/class/discussion.class.php');
+require_once('./src/models/autoload.php');
 
 const EMPTY_INPUT = 'Veuillez sélectionner ce champ !';
 const ERROR_INPUT = 'Ce champ est invalide !';
 
 function getViewMessage()
 {
-
+  $comment = new Comment();
   $message = new Message();
   $discussion = new Discussion();
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {

@@ -31,6 +31,7 @@ $title = 'Forum';
                   // Appelle la Vue deleteForm.view 
                   require __DIR__ . './deleteForm.view.php';
                 } ?>
+                <small class="count"><?= $discussion->getCountDiscussions($subjects['id_m']); ?></small>
                 <small class="user"><?= $subjects['pseudo']; ?></small>
                 <img class="imgUser" src="./assets/images/uploads/<?= $subjects['avatar'] ?? 'default.png'; ?>"></img>
                 <small class="date"><?= $subjects['date']; ?></small>

@@ -40,6 +40,11 @@ span {
   background-color: aliceblue;
 }
 
+.count {
+  color: blue;
+  margin-right: 5px;
+}
+
 .link a {
   text-decoration: none;
   color: #386f99;

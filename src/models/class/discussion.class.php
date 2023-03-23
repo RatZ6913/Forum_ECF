@@ -41,4 +41,11 @@ class Discussion extends Database
     $getInfosOfDiscussion->execute();
     return $getInfos = $getInfosOfDiscussion->fetch();
   }
+
+  function getCountDiscussions(int $idMsg): string {
+    $getCountDiscussions = $this->pdo->prepare("SELECT COUNT(*) FROM discussion WHERE id_messages = :idMsg");
+    $getCountDiscussions->bindParam('idMsg', $idMsg);
+    $getCountDiscussions->execute();
+    return $totalDiscussions = $getCountDiscussions->fetchColumn();
+  }
 }

@@ -26,4 +26,11 @@ class Comment extends Database
     $deleteComment->bindParam('idComment', $idComment);
     return $deleteComment->execute();
   }
+
+  function countComments($idDiscussion) {
+    $countComment = $this->pdo->prepare("SELECT COUNT(*) FROM comments WHERE id_discussions = :idDiscussion");
+    $countComment->bindParam('idDiscussion', $idDiscussion);
+    $countComment->execute();
+    return $totalComments = $countComment->fetchColumn();
+  }
 }

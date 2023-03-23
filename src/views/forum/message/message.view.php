@@ -20,6 +20,7 @@ $title = 'Messages';
             // Appelle la Vue deleteForm.view 
             require __DIR__ . './deleteForm.view.php';
           } ?>
+          <small class="count"><?= $comment->countComments($discussions['id_d']); ?></small>
           <small class="user"><?= $discussions['pseudo']; ?></small>
           <img src="./assets/images/uploads/<?= $discussions['avatar'] ?? 'default.png'; ?>"></img>
           <small class="date"><?= $discussions['date']; ?></small>
