@@ -1,6 +1,6 @@
 <?php
 
-// Si USER est connecté alors, je lui empêche : La Vue Connexion et Inscription
+// Si USER est pas connecté alors, je lui empêche la : Partie Forum
 if (empty($_SESSION['pseudo'])) {
   header('location: ./');
 }

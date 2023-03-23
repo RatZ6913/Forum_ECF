@@ -1,10 +1,5 @@
 <?php
 
-// Si USER est connecté alors, je lui empêche : La Vue Connexion et Inscription
-if (empty($_SESSION['pseudo'])) {
-  header('location: ./');
-}
-
 function getViewComment() {
 
   $comment = new Comment();

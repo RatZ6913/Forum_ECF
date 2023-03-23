@@ -1,7 +1,7 @@
 <?php
 
 function getViewHomePage(): void {
-  // Si URL = http://localhost:3000 OU /index.php. Appelle la View Accueil
+  // Si URL = http://localhost:3000/ OU /index.php. Appelle la View Accueil
   if ($_SERVER['PHP_SELF'] == '/index.php' && empty($_GET)) {
     require_once('./src/views/home.view.php');
     require_once('./src/views/templates/main.template.php');
