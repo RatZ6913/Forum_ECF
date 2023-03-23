@@ -13,37 +13,37 @@ $message = new Message();
   <!-- // Appelle la Vue postForm.view  -->
   <?php require_once __DIR__ . './postForm.view.php'; ?>
 
-  <article>
-    <h3 class="text-center">Liste des topics</h3>
+  <article id="main-box">
+    <h2>Liste des topics</h2>
 
     <!-- Première Boucle qui va afficher les différents Topics -->
     <?php foreach ($topic->getTopicCategory() as $categories) : ?>
-      <h4><?= $categories['category']; ?> <small>(<?= $categories['alias']; ?>)</small> </h4>
+      <section id="box-content">
+        <h3><?= $categories['category']; ?> <small>(<?= $categories['alias']; ?>)</small></h3>
 
-      <!-- Deuxième Boucle qui va afficher les Sujets/Messages des différents topics -->
-      <?php foreach ($message->getMessagesSubject() as $subjects) : ?>
-        <!-- Condition si : ID table MESSAGES correspond à ID de table TOPICS, Alors affiche les posts  -->
-        <?php if ($categories['id_t'] == $subjects['id_topics']) : ?>
-          <section class="d-flex border m-5">
-            <div class="d-flex flex-fill m-5 p-0 items-center">
-              <a href="./?action=message&id=<?= $subjects['id_m']; ?>"><?= $subjects['title']; ?></a>
-            </div>
+        <!-- Deuxième Boucle qui va afficher les Sujets/Messages des différents topics -->
+        <?php foreach ($message->getMessagesSubject() as $subjects) : ?>
+          <!-- Condition si : ID table MESSAGES correspond à ID de table TOPICS, Alors affiche les posts  -->
+          <?php if ($categories['id_t'] == $subjects['id_topics']) : ?>
+            <section id="box-topic">
+              <div class="box-subject">
+                <a href="./?action=message&id=<?= $subjects['id_m']; ?>"><?= $subjects['title']; ?></a>
+              </div>
 
-            <div class="d-flex m-5 p-0 items-center">
-              <!-- Si les Sujets/Messages correspondent à l'utilisateur alors affiche les boutons supprimer  -->
-              <?php
-              if ($_SESSION['id_user'] === $subjects['id_users']) {
-                // Appelle la Vue deleteForm.view 
-                require __DIR__ . './deleteForm.view.php';
-              }
-              ?>
-              <small class="blue mr-5"><?= $subjects['pseudo']; ?></small>
-              <small class="italic"><?= $subjects['date']; ?></small>
-            </div>
-          </section>
+              <div class="d-flex m-5 p-0 items-center">
+                <!-- Si les Sujets/Messages correspondent à l'utilisateur alors affiche les boutons supprimer  -->
+                <?php if ($_SESSION['id_user'] === $subjects['id_users']) {
+                  // Appelle la Vue deleteForm.view 
+                  require __DIR__ . './deleteForm.view.php';
+                } ?>
+                <small class="user"><?= $subjects['pseudo']; ?></small>
+                <small class="date"><?= $subjects['date']; ?></small>
+              </div>
+            </section>
+          <?php endif; ?>
+        <?php endforeach; ?>
 
-        <?php endif; ?>
-      <?php endforeach; ?>
+      </section>
     <?php endforeach; ?>
   </article>
 </main>
