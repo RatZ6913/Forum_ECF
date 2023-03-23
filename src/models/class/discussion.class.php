@@ -9,7 +9,7 @@ class Discussion extends Database
   }
 
   function getDiscussions(string $idMsg): array | bool {
-    $getDiscussions = $this->pdo->prepare("SELECT discussion.* , users.id_u , users.pseudo FROM discussion 
+    $getDiscussions = $this->pdo->prepare("SELECT discussion.* , users.id_u , users.pseudo, users.avatar FROM discussion 
     INNER JOIN users WHERE discussion.id_users = users.id_u AND id_messages = :idMsg ORDER BY date DESC");
     $getDiscussions->bindParam('idMsg', $idMsg);
     $getDiscussions->execute();

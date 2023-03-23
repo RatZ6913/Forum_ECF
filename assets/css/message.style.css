@@ -1,3 +1,7 @@
+main {
+  min-height: 75vh;
+}
+
 #main-box {
   display: flex;
   flex-direction: column;
@@ -32,19 +36,31 @@ span {
   padding: 20px;
 }
 
+.box-content:nth-child(odd){
+  background-color: aliceblue;
+}
+
 .link a {
   text-decoration: none;
-  color: #1B9CFC;
+  color: #386f99;
 }
 
 .link a:hover {
-  color: #105386;
+  color: #0d3555;
+  text-decoration: underline;
 }
 
 .infos {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.infos img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
 }
 
 .user {

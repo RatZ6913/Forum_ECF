@@ -103,7 +103,7 @@ nav img {
 }
 
 /* HomeView */
-#home {
+#home, #connected {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,12 +111,22 @@ nav img {
   height: 70vh;
   margin: 1rem;
   padding: 1rem;
+  min-height: 75vh;
+}
+
+#home {
   background-image: url('./../../assets/images/import/cat-bg.jpg');
   background-size: contain;
   background-position: center;
 }
 
-#home h1, #home p {
+#connected {
+  background-image: url('./../../assets/images/import/cat-bg7.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#home h1, #home p ,#connected h1, #connected p {
   font-size: 32px;
   color: #2f2f2f;
   background-color: white;
@@ -126,7 +136,7 @@ nav img {
   box-shadow: var(--box-shadow);
 }
 
-#home p {
+#home p, #connected p {
   font-size: 20px;
   color: #2a2929;
 }
@@ -135,7 +145,7 @@ nav img {
 #disconnect {
   display: flex;
   justify-content: space-evenly;
-  height: 75vh;
+  min-height: 80vh;
 }
 
 #img-exit {

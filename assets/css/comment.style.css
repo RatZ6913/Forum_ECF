@@ -1,3 +1,7 @@
+main {
+  min-height: 75vh;
+}
+
 #main-box {
   display: flex;
   flex-direction: column;
@@ -23,7 +27,7 @@ h2 {
   margin: 10px;
   height: 5vh;
   padding: 15px;
-  background-color: #616161;
+  background-color: #989696;
 }
 
 span {
@@ -43,6 +47,13 @@ span {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.infos img {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  border-radius: 50%;
 }
 
 .user {

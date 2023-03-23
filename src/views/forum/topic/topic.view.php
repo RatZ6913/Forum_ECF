@@ -36,12 +36,12 @@ $message = new Message();
                   require __DIR__ . './deleteForm.view.php';
                 } ?>
                 <small class="user"><?= $subjects['pseudo']; ?></small>
+                <img class="imgUser" src="./assets/images/uploads/<?= $subjects['avatar']; ?>"></img>
                 <small class="date"><?= $subjects['date']; ?></small>
               </div>
             </section>
           <?php endif; ?>
         <?php endforeach; ?>
-
       </section>
     <?php endforeach; ?>
   </article>

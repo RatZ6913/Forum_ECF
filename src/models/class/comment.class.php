@@ -9,7 +9,7 @@ class Comment extends Database
   }
 
   function getComments(string $idDiscussion): array | bool {
-    $getDiscussions = $this->pdo->prepare("SELECT comments.* , users.id_u , users.pseudo FROM comments 
+    $getDiscussions = $this->pdo->prepare("SELECT comments.* , users.id_u , users.pseudo, users.avatar FROM comments 
     INNER JOIN users WHERE comments.id_users = users.id_u AND id_discussions = :idDiscussion ORDER BY date DESC");
     $getDiscussions->bindParam('idDiscussion', $idDiscussion);
     $getDiscussions->execute();

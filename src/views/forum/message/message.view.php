@@ -16,7 +16,7 @@ $discussion = new Discussion();
     <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) : ?>
       <section class="box-content">
         <div class="link">
-          <a href="./?action=comment&id_d=<?= $discussions['id_d']; ?>"><?= $discussions['title']; ?></a>
+          <a class="text" href="./?action=comment&id_d=<?= $discussions['id_d']; ?>"><?= $discussions['title']; ?></a>
         </div>
         <div class="infos">
           <?php if ($_SESSION['id_user'] === $discussions['id_users']) {
@@ -24,6 +24,7 @@ $discussion = new Discussion();
             require __DIR__ . './deleteForm.view.php';
           } ?>
           <small class="user"><?= $discussions['pseudo']; ?></small>
+          <img src="./assets/images/uploads/<?= $discussions['avatar'] ?? 'default.png'; ?>"></img>
           <small class="date"><?= $discussions['date']; ?></small>
         </div>
       </section>
