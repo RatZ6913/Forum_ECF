@@ -16,7 +16,7 @@ const ERROR_INPUT = 'Ce champ est invalide !';
 function getViewComment(){
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $discussion = new Discussion();
+    $comment = new Comment();
 
     $errors = [
       'error' => '',
@@ -25,30 +25,30 @@ function getViewComment(){
     // Vérifications des champs postForm
     if (!empty($_POST['submit'])) {
 
-      if (empty($_POST['discussion'])) {
+      if (empty($_POST['comment'])) {
         $errors['error'] = ERROR_INPUT;
-      } else if (strlen($_POST['discussion']) > 45) {
+      } else if (strlen($_POST['comment']) > 200) {
         $errors['error'] = ERROR_INPUT;
       }
 
       // Si toutes les vérifications de postForm sont bons alors :
       if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
-        $newDiscussion = [
+        $newComment = [
           'id_users' => $_SESSION['id_user'],
-          'id_messages' => $_GET['id'],
-          'title' => $_POST['discussion']
+          'id_discussions' => $_GET['id_d'],
+          'comment' => $_POST['comment']
         ];
-        $discussion->addNewDiscussion($newDiscussion);
+        $comment->addNewComment($newComment);
+        header("Location: ./?action=comment&id_d=" . $_GET['id_d']);
       }
     }
 
     // Ici les instructions du boutton Supprimer deleteForm 
-    // if ($_POST['delete'] ?? '') {
-    //   if ($_POST['id_message']) {
-    //     $idMsg = (int)$_POST['id_message'] ?? '';
-    //     $message->deleteSubject($idMsg);
-    //   }
-    // }
+    if ($_POST['delete'] ?? '') {
+      if ($_POST['id_comment']) {
+        $comment->deleteComment($_POST['id_comment']);
+      }
+    }
   }
   require_once('./src/views/forum/comment/comment.view.php');
   require_once('./src/views/templates/main.template.php');

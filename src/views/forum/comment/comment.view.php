@@ -17,7 +17,7 @@ $discussion = new Discussion();
     ?>
       <section class="d-flex border m-5">
         <div class="d-flex flex-fill m-5 p-0 items-center">
-          <a href="./?action=comment"><?= $comments['comment']; ?></a>
+          <p><?= $comments['comment']; ?></p>
         </div>
         <div class="p-0">
           <?php
@@ -39,3 +39,4 @@ $discussion = new Discussion();
 
 <?php
 $content = ob_get_clean();
+var_dump($_GET);
