@@ -1,0 +1,104 @@
+#main-box {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 1rem auto;
+  padding: 20px;
+  width: 80%;
+}
+
+h2 {
+  background-color: #6c5b7b;
+  width: 100%;
+  font-size: 26px;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.box-content {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  height: 5vh;
+  padding: 15px;
+  background-color: #616161;
+}
+
+span {
+  color: #EAB543;
+}
+
+.link a {
+  text-decoration: none;
+  color: #1B9CFC;
+}
+
+.link a:hover {
+  color: #105386;
+}
+
+.infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user {
+  color: #182C61;
+  margin-right: 5px;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.date {
+  font-style: italic;
+  color: #3b3b3b;
+  font-size: 12px;
+}
+
+#postForm  {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1rem;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+#postForm p {
+  text-align: center;
+}
+
+#postForm form {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+}
+
+form textarea {
+  margin: 10px;
+}
+
+#submit, .btn-del {
+  text-align: center;
+  width: 80px;
+  margin: auto;
+  background-color: #EAB543;
+  color: #6c5b7b;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#submit:hover, .btn-del:hover {
+  background-color: #105386;
+  color: antiquewhite;
+}
+
+.btn-del {
+  margin: 0;
+  margin-right: 20px;
+}

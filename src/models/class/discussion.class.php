@@ -26,4 +26,11 @@ class Discussion extends Database
     $deleteSubject->bindParam('idMsg', $idMsg);
     return $deleteSubject->execute();
   }
+
+  function getTitleDiscussion($idMsg){
+    $getTitle = $this->pdo->prepare("SELECT title FROM discussion WHERE id_d = :idMsg");
+    $getTitle->bindParam('idMsg', $idMsg);
+    $getTitle->execute();
+    return $getTitleOne = $getTitle->fetch();
+  }
 }
