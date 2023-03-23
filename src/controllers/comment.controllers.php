@@ -25,7 +25,7 @@ function getViewComment(){
 
       if (empty($commentPost)) {
         $errors['error'] = 'Champ invalide !';
-      } else if (strlen($commentPost) > 200) {
+      } else if (strlen($commentPost) > 500) {
         $errors['error'] = 'Champ invalide !';
       }
 

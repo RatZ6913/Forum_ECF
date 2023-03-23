@@ -44,11 +44,14 @@ h2 {
 
 .box-content {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin: 10px;
-  height: 5vh;
+  margin: 5px;
+  min-height: 5vh;
   padding: 15px;
-  background-color: #989696;
+  border: 1px solid #e1b12c;
+  background-color: #ccae62;
+  border-radius: 10px;
 }
 
 .nameUser {
@@ -62,13 +65,9 @@ span {
   color: #EAB543;
 }
 
-.link a {
+.link p {
   text-decoration: none;
-  color: #1B9CFC;
-}
-
-.link a:hover {
-  color: #105386;
+  color: #273c75;
 }
 
 .infos {
@@ -100,7 +99,7 @@ span {
 #postForm  {
   display: flex;
   flex-direction: column;
-  background-color: #7f8fa6;
+  background-color: #aaa69d;
   padding: 1rem;
   width: 50%;
   margin: 1rem auto;
@@ -125,8 +124,8 @@ form textarea {
   text-align: center;
   width: 80px;
   margin: auto;
-  background-color: #EAB543;
-  color: #6c5b7b;
+  background-color: #f7f1e3;
+  color: brown;
   border: none;
   padding: 5px;
   cursor: pointer;
