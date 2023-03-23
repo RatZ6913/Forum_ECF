@@ -4,8 +4,6 @@ if (!empty($_SESSION['pseudo'])) {
   header('location: ./');
 }
 
-require_once('./src/models/class/user.class.php');
-
 const ERROR_INPUT = "Ce champ est incorrect";
 const ERROR_CHECK_PASSWORD = "Vos mots de passes ne correspondent pas";
 const ERROR_INVALID_email = "email non valide";

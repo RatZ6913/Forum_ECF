@@ -1,10 +1,5 @@
 <?php
 
-if(!session_id()){
-  session_start();
-}
-require_once('./src/models/autoload.php');
-
 // Si USER n'est pas connecté alors, je lui empêche : La Vue Profil (Modification)
 if(empty($_SESSION['pseudo'])){
   header('location: ./');

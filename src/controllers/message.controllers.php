@@ -1,14 +1,11 @@
 <?php
-if (!session_id()) {
-  session_start();
-}
 
 // Si USER est connecté alors, je lui empêche : La Vue Connexion et Inscription
 if (empty($_SESSION['pseudo'])) {
   header('location: ./');
 }
 
-require_once('./src/models/autoload.php');
+// require_once('./src/models/autoload.php');
 
 const EMPTY_INPUT = 'Veuillez sélectionner ce champ !';
 const ERROR_INPUT = 'Ce champ est invalide !';

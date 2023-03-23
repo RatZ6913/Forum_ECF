@@ -1,10 +1,4 @@
 <?php
-// Si USER est connecté alors, je lui empêche : La Vue Connexion et Inscription
-if(!empty($_SESSION['pseudo'])){
-  header('location: ./');
-}
-
-require_once('./src/models/class/user.class.php');
 
 const ERROR_CONNECT = "Vos identifiants ou mots de passes sont incorrects";
 const ERROR_EMPTY = "Veuillez rentrez vos informations";

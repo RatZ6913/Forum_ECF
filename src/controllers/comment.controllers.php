@@ -1,21 +1,16 @@
 <?php
-if (!session_id()) {
-  session_start();
-}
 
 // Si USER est connecté alors, je lui empêche : La Vue Connexion et Inscription
 if (empty($_SESSION['pseudo'])) {
   header('location: ./');
 }
 
-require_once('./src/models/class/comment.class.php');
-
 function getViewComment() {
 
   $comment = new Comment();
   $discussion = new Discussion();
   $infosDiscussion = $discussion->getInfosOfDiscussion($_GET['id_d']);
-  
+
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = new Comment();
 
