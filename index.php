@@ -30,12 +30,14 @@ try {
     } else if ($_GET['action'] === 'comment'){
       require_once('./src/controllers/comment.controllers.php');
       getViewComment();
+    } else {
+      getViewError();
     }
 
   } else {
     getViewHomePage();
   }
 
-} catch (Exception $e) {
-  throw new Exception($e->getMessage(getViewError()));
+}  catch (Exception $e) {
+  getViewError();
 }
