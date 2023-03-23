@@ -11,7 +11,7 @@ $discussion = new Discussion();
 <main>
   <?php require_once __DIR__ . './postForm.view.php'; ?>
   <article id="main-box">
-    <h2 class="text-center">Les messages de : <span>"<?= $message->getTitle($_GET['id'])['title']; ?>"</span></h2>
+    <h2 class="text-center">Les messages de : <span>“<?= $message->getTitle($_GET['id'])['title']; ?>”</span></h2>
 
     <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) : ?>
       <section class="box-content">

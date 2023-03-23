@@ -27,10 +27,18 @@ class Discussion extends Database
     return $deleteSubject->execute();
   }
 
-  function getTitleDiscussion($idMsg){
+  function getTitleDiscussion($idMsg): bool | array {
     $getTitle = $this->pdo->prepare("SELECT title FROM discussion WHERE id_d = :idMsg");
     $getTitle->bindParam('idMsg', $idMsg);
     $getTitle->execute();
     return $getTitleOne = $getTitle->fetch();
+  }
+
+  function getInfosOfDiscussion(string $idDiscussion): bool | array {
+    $getInfosOfDiscussion = $this->pdo->prepare("SELECT discussion.* , users.* FROM discussion 
+    INNER JOIN users WHERE discussion.id_users = users.id_u AND id_d = :idDiscussion");
+    $getInfosOfDiscussion->bindParam('idDiscussion', $idDiscussion);
+    $getInfosOfDiscussion->execute();
+    return $getInfos = $getInfosOfDiscussion->fetch();
   }
 }

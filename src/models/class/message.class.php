@@ -19,13 +19,13 @@ class Message extends Database
     return $addSubject->execute($subject);
   }
 
-  function deleteSubject(int $idMsg): array | bool {
+  function deleteSubject(int $idMsg): bool {
     $deleteSubject = $this->pdo->prepare('DELETE FROM messages WHERE id_m = :idMsg');
     $deleteSubject->bindParam('idMsg', $idMsg);
     return $deleteSubject->execute();
   }
 
-  function getTitle($idMsg){
+  function getTitle($idMsg): bool | array {
     $getTitle = $this->pdo->prepare("SELECT title FROM messages WHERE id_m = :idMsg");
     $getTitle->bindParam('idMsg', $idMsg);
     $getTitle->execute();

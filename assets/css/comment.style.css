@@ -21,6 +21,27 @@ h2 {
   margin-bottom: 10px;
 }
 
+#info-comment {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f5f6fa;
+  width: 60%;
+  margin: auto;
+  padding: 15px;
+  box-shadow: var(--box-shadow);
+}
+
+#info-comment:hover {
+  box-shadow: 2px 2px 3px 1px #17445c;
+}
+
+#info-comment img {
+  max-width: 150px;
+  max-height: 150px;
+  border-radius: 15px;
+}
+
 .box-content {
   display: flex;
   justify-content: space-between;
@@ -28,6 +49,13 @@ h2 {
   height: 5vh;
   padding: 15px;
   background-color: #989696;
+}
+
+.nameUser {
+  color: #182C61;
+  padding: 10px;
+  font-size: 20px;
+  text-decoration: underline;
 }
 
 span {
@@ -72,7 +100,7 @@ span {
 #postForm  {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: #7f8fa6;
   padding: 1rem;
   width: 50%;
   margin: 1rem auto;

@@ -4,13 +4,24 @@ $title = 'Commentaires';
 require_once('./src/models/autoload.php');
 $comment = new Comment();
 $discussion = new Discussion();
+
+$infosDiscussion = $discussion->getInfosOfDiscussion($_GET['id_d']);
 ?>
 
 <link rel="stylesheet" href="./assets/css/comment.style.css" type="text/css">
 
 <main>
   <article id="main-box">
-    <h2 class="text-center">Commentaires de : <span>"<?= $discussion->getTitleDiscussion($_GET['id_d'])['title']; ?>"</span></h2>
+    <section id="info-comment">
+        <h2 class="text-center">Sujet de la discussion : <span>“<?= $infosDiscussion['title']; ?>”</span></h2>
+        <img src="./assets/images/uploads/<?= $infosDiscussion['avatar'] ?? '';; ?>">
+        <p>Auteur de la discussion : <span class="nameUser"><?= $infosDiscussion['pseudo']; ?></span></p>
+        <small>Le : <?= $infosDiscussion['date']; ?></small>
+    </section>
+
+    <?php require_once __DIR__ . './postForm.view.php'; ?>
+
+    <h3>Commentaires : </h3>
     <?php foreach ($comment->getComments($_GET['id_d']) as $comments) : ?>
       <section class="box-content">
         <div class="link">
@@ -22,13 +33,12 @@ $discussion = new Discussion();
             require __DIR__ . './deleteForm.view.php';
           } ?>
           <small class="user"><?= $comments['pseudo']; ?></small>
-          <img src="./assets/images/uploads/<?= $comments['avatar']; ?>">
+          <img src="./assets/images/uploads/<?= $comments['avatar'] ?? 'default.png'; ?>">
           <small class="date"><?= $comments['date']; ?></small>
         </div>
       </section>
     <?php endforeach; ?>
   </article>
-  <?php require_once __DIR__ . './postForm.view.php'; ?>
 </main>
 
 <?php

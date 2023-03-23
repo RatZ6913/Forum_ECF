@@ -11,9 +11,7 @@ class Image extends Database
     $this->targetDir = trim("./assets/images/uploads/ ");
   }
 
-  public function uploadImage()
-  {
-
+  public function uploadImage() {
     $fileExtension = pathinfo($_FILES['post']['name'], PATHINFO_EXTENSION);
     $hashedName = substr(md5($_FILES['post']['name']), 0, 8);
     $targetFile = $this->targetDir . $hashedName . '.' . $fileExtension;

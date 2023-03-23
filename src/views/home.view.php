@@ -19,7 +19,6 @@ $title = 'Page d\'accueil';
         Vous avez accès aux forum !</p>
     </section>
   <?php endif; ?>
-
 </main>
 <?php
 $content = ob_get_clean();

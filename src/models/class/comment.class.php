@@ -21,7 +21,7 @@ class Comment extends Database
     return $addNewComment->execute($comment);
   }
 
-  function deleteComment(string $idComment){
+  function deleteComment(string $idComment): bool {
     $deleteComment = $this->pdo->prepare("DELETE FROM comments WHERE id_c = :idComment");
     $deleteComment->bindParam('idComment', $idComment);
     return $deleteComment->execute();

@@ -11,8 +11,7 @@ class Database
   private $password;
   public $pdo;
 
-  public function __construct()
-  {
+  public function __construct() {
     $this->pdo = new PDO(
       'mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->database,
       // $this->nameDB,
