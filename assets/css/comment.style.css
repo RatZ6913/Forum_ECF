@@ -50,7 +50,7 @@ h2 {
   min-height: 5vh;
   padding: 15px;
   border: 1px solid #e1b12c;
-  background-color: #ccae62;
+  background-color: #ccae6263;
   border-radius: 10px;
 }
 
@@ -65,9 +65,14 @@ span {
   color: #EAB543;
 }
 
+.link {
+  max-width: 70%;
+}
+
 .link p {
   text-decoration: none;
   color: #273c75;
+  font-size: 18px;
 }
 
 .infos {

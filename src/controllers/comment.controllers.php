@@ -10,8 +10,12 @@ if (empty($_SESSION['pseudo'])) {
 
 require_once('./src/models/class/comment.class.php');
 
-function getViewComment(){
+function getViewComment() {
 
+  $comment = new Comment();
+  $discussion = new Discussion();
+  $infosDiscussion = $discussion->getInfosOfDiscussion($_GET['id_d']);
+  
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = new Comment();
 

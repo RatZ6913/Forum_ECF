@@ -1,10 +1,6 @@
 <?php
 ob_start();
 $title = 'Forum';
-require_once('./src/models/autoload.php');
-$topic = new Topic();
-$message = new Message();
-
 ?>
 
 <link rel="stylesheet" href="./assets/css/topic.style.css" type="text/css">

@@ -1,11 +1,6 @@
 <?php
 ob_start();
 $title = 'Commentaires';
-require_once('./src/models/autoload.php');
-$comment = new Comment();
-$discussion = new Discussion();
-
-$infosDiscussion = $discussion->getInfosOfDiscussion($_GET['id_d']);
 ?>
 
 <link rel="stylesheet" href="./assets/css/comment.style.css" type="text/css">

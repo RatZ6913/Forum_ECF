@@ -16,8 +16,9 @@ const ERROR_INPUT = 'Ce champ est invalide !';
 function getViewMessage()
 {
 
+  $message = new Message();
+  $discussion = new Discussion();
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $discussion = new Discussion();
 
     $errors = [
       'error' => '',

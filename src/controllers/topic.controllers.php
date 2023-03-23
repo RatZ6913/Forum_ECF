@@ -15,9 +15,9 @@ const ERROR_INPUT = 'Ce champ est invalide !';
 
 function getViewForum()
 {
+  $topic = new Topic();
+  $message = new Message();
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $topic = new Topic();
-    $message = new Message();
 
     $errors = [
       'error' => '',
