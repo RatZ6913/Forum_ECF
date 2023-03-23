@@ -2,6 +2,7 @@
 require_once('./src/models/autoload.php');
 ?>
 <section id="postForm">
+  <p>Quelque chose à rajouter ?</p>
   <form action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">
     <select name="alias" id="alias">
       <option value="">-- Choisissez --</option>
@@ -12,7 +13,7 @@ require_once('./src/models/autoload.php');
     </select>
     <p class="errors"><?= $errors['alias'] ?? ''; ?></p>
     <textarea name="message" placeholder="Entrez votre sujet... (45 caratères max)"></textarea>
-    <input type="submit" name="submit" value="Publier">
+    <input id="submit" type="submit" name="submit" value="Publier">
     <p class="errors"><?= $errors['error'] ?? ''; ?></p>
   </form>
 </section>
