@@ -18,7 +18,7 @@ $discussion = new Discussion();
     ?>
       <section class="d-flex border m-5">
         <div class="d-flex flex-fill m-5 p-0 items-center">
-          <a href="./?action=comment&id=<?= $discussions['id_d']; ?>"><?= $discussions['title']; ?></a>
+          <a href="./?action=comment&id_d=<?= $discussions['id_d']; ?>"><?= $discussions['title']; ?></a>
         </div>
         <div class="p-0">
           <?php
