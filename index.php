@@ -34,9 +34,8 @@ try {
 
   } else {
     getViewHomePage();
-    // getViewError();
   }
 
 } catch (Exception $e) {
-  throw new Exception($e->getMessage());
+  throw new Exception($e->getMessage(getViewError()));
 }

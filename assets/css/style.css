@@ -183,6 +183,37 @@ nav img {
   box-shadow: 2px 2px 3px 1px black;
 }
 
+/* ERROR VIEW  */
+
+#errorView {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+#errorView a {
+  text-decoration: none;
+  padding: 15px;
+  background-color: #2b2b2b;
+  margin-top: 20px;
+  color: white;
+}
+
+#errorPage {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  min-height: 70vh;
+  margin: 1rem auto;
+  background-image: url('./../images/import/error.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: brown;
+  padding: 20px;
+}
+
 /* FORMULAIRES  */
 form {
   display: flex;
