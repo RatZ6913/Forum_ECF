@@ -3,20 +3,19 @@ ob_start();
 $title = 'Profil';
 
 ?>
-<!-- <link rel="stylesheet" href="./public/css/form.style.css" /> -->
+<link rel="stylesheet" href="./assets/css/profil.style.css" />
 
-<section class="container">
-  <div id="formProfil">
+<section id="container">
+  <div id="content-form">
     <h2>Votre profil</h2>
-    <p>Modifier votre profil</p>
     <img src="./assets/images/uploads/<?= $_SESSION['avatar'] ?? 'default.png'; ?>">
 
-    <form id="form" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST" enctype='multipart/form-data'>
+    <form id="formProfil" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST" enctype='multipart/form-data'>
       <div>
         <label for="avatar">Avatar :</label>
         <input type="file" name="post" id="avatar" value="<?= $_SESSION['avatar'] ?? 'default.png'; ?>">
-        <small>* < 5MO, Gif,JPEG,JPG,GIF</span>
-        <p class="errors"><?= $errors['post'] ?? '' ?></p>
+        <small>* < 5MO, PNG,JPEG,JPG,GIF</span>
+            <p class="errors"><?= $errors['post'] ?? '' ?></p>
       </div>
       <div>
         <label for="pseudo">Pseudo :</label>
@@ -35,8 +34,8 @@ $title = 'Profil';
       </div>
       <div>
         <input type="submit" value="Modifier">
+        <p class="success"><?= $_SESSION['status']  ?? ''; ?></p>
       </div>
-      <p class="success"><?= $_SESSION['status']  ?? ''; ?></p>
     </form>
   </div>
 </section>

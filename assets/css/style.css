@@ -21,6 +21,7 @@
 
 body {
   background-color: #f0f0f0;
+  cursor: url('./../images/import/cat-paws.png'), auto;
 }
 
 /* Header & Barre de navigation  */
@@ -110,7 +111,7 @@ nav img {
   height: 70vh;
   margin: 1rem;
   padding: 1rem;
-  background-image: url('../../assets/images/import/cat-bg.jpg');
+  background-image: url('./../../assets/images/import/cat-bg.jpg');
   background-size: contain;
   background-position: center;
 }
@@ -130,26 +131,45 @@ nav img {
   color: #2a2929;
 }
 
-/* FORMULAIRES  */
-
-#container {
+/* VIEW DISCONNECT  */
+#disconnect {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  width: 50%;
-  height: 50vh;
-  margin: auto;
-  margin-top: 15vh;
+  justify-content: space-evenly;
+  height: 75vh;
 }
 
+#img-exit {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-image: url('./../../assets/images/import/cat-bg6.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 5px;
+  width: 50%;
+}
+
+#img-exit p {
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+#text-exit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 50%;
+}
+
+/* FORMULAIRES  */
 form {
   display: flex;
   flex-direction: column;
-  margin: auto;
-  border: var(--border);
-  padding: 10rem;
-  background-size: cover;
-}
+  margin: 1rem auto;
+} 
 
 /* Footer  */
 

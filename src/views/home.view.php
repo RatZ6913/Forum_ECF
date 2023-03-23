@@ -7,8 +7,16 @@ $title = 'Page d\'accueil';
 <main>
   <section id="home">
     <h1>Bienvenue ! <span class="blue"> <?= $_SESSION['pseudo'] ?? ''; ?> </span></h1>
-    <p class="text-center">Ici, regroupe la communauté des chats ! <br>
-      Pour accéder à notre forum, veuillez vous connecter</p>
+    <?php if (empty($_SESSION['pseudo']) && !isset($_SESSION['pseudo'])) : ?>
+      <p class="text-center">Ici, regroupe la communauté des chats ! <br>
+        Pour accéder à notre forum, veuillez vous connecter</p>
+    <?php endif; ?>
+
+    <?php if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) : ?>
+      <p class="text-center">Vous faîtes partie de notre communauté ! Meow <br>
+        Vous avez accès aux forum !</p>
+    <?php endif; ?>
+
   </section>
 </main>
 <?php

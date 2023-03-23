@@ -8,9 +8,9 @@ function getViewHomePage(){
 function getViewDisconnect()
 {
   // Si aucune session USER alors je lui empêche : La Vue Déconnexion
-  if (empty($_SESSION['pseudo'])) {
-    header('location: ./');
-  }
+  // if (empty($_SESSION['pseudo'])) {
+  //   header('location: ./');
+  // }
   require_once('./src/views/disconnect.view.php');
   require_once('./src/views/templates/main.template.php');
 }

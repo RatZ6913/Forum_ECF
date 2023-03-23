@@ -4,12 +4,13 @@ ob_start();
 $title = 'Inscription';
 
 ?>
+<link rel="stylesheet" href="./assets/css/auth.style.css" />
 
 <section id="container">
   <div id="formConnect">
-    <h1>Inscription</h1>
-    <p class="para">Saissisez vos informations pour vous connecter</p>
-    <form id="form" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">
+    <h2>Inscription</h2>
+    <p id="text">Saissisez vos informations pour vous connecter</p>
+    <form id="formAuth" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">
       <p>Identifiant :</p>
       <input class="input" type="text" name="pseudo" id="pseudo">
       <p class="errors"><?= $errors['pseudo'] ?? ''; ?> </p>
