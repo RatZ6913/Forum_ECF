@@ -12,7 +12,6 @@ $message = new Message();
 <main>
   <!-- // Appelle la Vue postForm.view  -->
   <?php require_once __DIR__ . './postForm.view.php'; ?>
-
   <article id="main-box">
     <h2>Liste des topics</h2>
 

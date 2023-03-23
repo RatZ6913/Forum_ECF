@@ -1,6 +1,3 @@
-<?php
-require_once('./src/models/autoload.php');
-?>
 <section id="postForm">
   <p>Quelque chose à rajouter ?</p>
   <form action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">

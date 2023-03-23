@@ -10,26 +10,21 @@ $discussion = new Discussion();
 
 <main>
   <?php require_once __DIR__ . './postForm.view.php'; ?>
+  <article id="main-box">
+    <h2 class="text-center">Les messages de : <span>"<?= $message->getTitle($_GET['id'])['title']; ?>"</span></h2>
 
-  <article>
-    <h3 class="text-center">Sujets de : "<?= $message->getTitle($_GET['id'])['title']; ?>"</h3>
-
-    <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) :
-    ?>
-      <section class="d-flex border m-5">
-        <div class="d-flex flex-fill m-5 p-0 items-center">
+    <?php foreach ($discussion->getDiscussions($_GET['id']) as $discussions) : ?>
+      <section class="box-content">
+        <div class="link">
           <a href="./?action=comment&id_d=<?= $discussions['id_d']; ?>"><?= $discussions['title']; ?></a>
         </div>
-        <div class="p-0">
-          <?php
-          if ($_SESSION['id_user'] === $discussions['id_users']) {
+        <div class="infos">
+          <?php if ($_SESSION['id_user'] === $discussions['id_users']) {
             // Appelle la Vue deleteForm.view 
             require __DIR__ . './deleteForm.view.php';
-          }
-          echo $discussions['id_d'];
-          ?>
-          <small class="blue mr-5"><?= $discussions['pseudo']; ?></small>
-          <small class="italic"><?= $discussions['date']; ?></small>
+          } ?>
+          <small class="user"><?= $discussions['pseudo']; ?></small>
+          <small class="date"><?= $discussions['date']; ?></small>
         </div>
       </section>
     <?php endforeach; ?>

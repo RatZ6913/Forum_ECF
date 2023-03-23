@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  margin: 1rem auto;
+  margin: 10px auto;
   padding: 20px;
   width: 80%;
 }
@@ -13,63 +13,38 @@ h2 {
   font-size: 26px;
   text-align: center;
   color: white;
-}
-
-#box-content {
-  background-color: antiquewhite;
-  width: 80%;
-  margin: 1rem auto;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 3px 1px #2b2b2b;
-}
-
-#box-content:nth-child(odd) {
-  transform: translateX(10px);
-}
-
-#box-content:nth-child(even) {
-  transform: translateX(-10px);
-}
-
-#box-content:hover {
-  transition: 0.2s;
-  transform: translate(0);
-}
-
-#box-content:hover {
-  box-shadow: 2px 2px 3px 1px #6c5b7b;
-}
-
-h3 {
-  text-decoration: underline;
-  margin: 10px;
-  color: #2C3A47;
-}
-
-#box-topic {
-  display: flex;
-  justify-content: space-between;
-  margin: 2px;
-  background-color: white;
-  min-height: 7vh;
-  align-items: center;
-}
-
-.box-subject {
-  display: flex;
-  flex-basis: 1 1 auto;
   padding: 10px;
+  margin-bottom: 10px;
 }
 
-.box-subject a {
+span {
+  color: #EAB543;
+}
+
+.box-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  margin: 2px auto;
+  height: 5vh;
+  width: 80%;
+  padding: 20px;
+}
+
+.link a {
   text-decoration: none;
   color: #1B9CFC;
-  font-weight: 700;
 }
 
-.box-subject a:hover {
-  text-decoration: underline;
+.link a:hover {
+  color: #105386;
+}
+
+.infos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .user {
@@ -98,17 +73,11 @@ h3 {
   text-align: center;
 }
 
-form {
+#postForm form {
   display: flex;
   justify-content: center;
   width: 80%;
   text-align: center;
-}
-
-form select {
-  text-align: center;
-  margin: 10px auto;
-  width: 200px;
 }
 
 form textarea {
@@ -127,10 +96,11 @@ form textarea {
 }
 
 #submit:hover, .btn-del:hover {
-  background-color: #FEA47F;
-  color: #1B9CFC;
+  background-color: #105386;
+  color: antiquewhite;
 }
 
 .btn-del {
+  margin: 0;
   margin-right: 20px;
 }
