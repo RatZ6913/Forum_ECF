@@ -9,9 +9,11 @@ $title = 'Déconnexion';
     <p>Meeoooooow !</p>
   </div>
   <div id="text-exit">
-    <p>Vous avez bien été déconnecté</p>
-    <p>Merci de votre visite</p>
-    <p>À bientôt !</p>
+    <div>
+      <p>Vous avez bien été déconnecté</p>
+      <p>Merci de votre visite</p>
+      <p>À bientôt !</p>
+    </div>
   </div>
 </section>
 

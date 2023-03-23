@@ -34,7 +34,7 @@ nav {
   min-height: 10vh;
   background-size: 100px;
   background-repeat: no-repeat;
-  animation: cat-animation 25s infinite;
+  animation: cat-animation 20s infinite;
 }
 
 @keyframes cat-animation {
@@ -153,6 +153,7 @@ nav img {
 #img-exit p {
   background-color: white;
   margin-bottom: 5px;
+  padding: 5px;
 }
 
 #text-exit {
@@ -162,6 +163,14 @@ nav img {
   justify-content: center;
   font-size: 24px;
   width: 50%;
+}
+
+#text-exit div {
+  background-color: #7c7a7a;
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  box-shadow: 2px 2px 3px 1px black;
 }
 
 /* FORMULAIRES  */
