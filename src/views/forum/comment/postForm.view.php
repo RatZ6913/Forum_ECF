@@ -1,6 +1,5 @@
 <?php
 require_once('./src/models/autoload.php');
-
 ?>
 
 <form id="postForm-comment" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST">

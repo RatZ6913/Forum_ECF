@@ -8,27 +8,25 @@ if (empty($_SESSION['pseudo'])) {
   header('location: ./');
 }
 
-require_once('./src/models/autoload.php');
-
-const EMPTY_INPUT = 'Veuillez sélectionner ce champ !';
-const ERROR_INPUT = 'Ce champ est invalide !';
+require_once('./src/models/class/comment.class.php');
 
 function getViewComment(){
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = new Comment();
 
-    $errors = [
-      'error' => '',
-    ];
-
     // Vérifications des champs postForm
     if (!empty($_POST['submit'])) {
+      $errors = [
+        'error' => '',
+      ];
+  
+      $commentPost = htmlspecialchars($_POST['comment'], ENT_QUOTES, 'UTF-8') ?? '';
 
-      if (empty($_POST['comment'])) {
-        $errors['error'] = ERROR_INPUT;
-      } else if (strlen($_POST['comment']) > 200) {
-        $errors['error'] = ERROR_INPUT;
+      if (empty($commentPost)) {
+        $errors['error'] = 'Champ invalide !';
+      } else if (strlen($commentPost) > 200) {
+        $errors['error'] = 'Champ invalide !';
       }
 
       // Si toutes les vérifications de postForm sont bons alors :

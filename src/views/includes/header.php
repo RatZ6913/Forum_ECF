@@ -20,6 +20,7 @@
     <?php
     endif;
     ?>
+    
     <ul>
       <li><a href="./">Accueil</a></li>
       <li><a href="./?action=forum">Forum</a></li>

@@ -1,5 +1,4 @@
 <?php
-
 ob_start();
 $title = 'Profil';
 
@@ -8,16 +7,16 @@ $title = 'Profil';
 
 <section class="container">
   <div id="formProfil">
-    <h1>Votre profil</h1>
-    <p class="para">Modifier votre profil</p>
-    <img src="./assets/images/uploads/<?= $_SESSION['avatar'] ?? 'default.png'; ?>" alt="">
+    <h2>Votre profil</h2>
+    <p>Modifier votre profil</p>
+    <img src="./assets/images/uploads/<?= $_SESSION['avatar'] ?? 'default.png'; ?>">
 
     <form id="form" action="<?= htmlspecialchars($_SERVER['REQUEST_URI']); ?>" method="POST" enctype='multipart/form-data'>
       <div>
         <label for="avatar">Avatar :</label>
         <input type="file" name="post" id="avatar" value="<?= $_SESSION['avatar'] ?? 'default.png'; ?>">
-        <span id="uploadImage">* < 5MO, Gif,JPEG,JPG,GIF</span>
-            <p class="errors"><?= $status['status'] ?? ''; ?></p>
+        <small>* < 5MO, Gif,JPEG,JPG,GIF</span>
+        <p class="errors"><?= $errors['post'] ?? '' ?></p>
       </div>
       <div>
         <label for="pseudo">Pseudo :</label>
@@ -31,7 +30,7 @@ $title = 'Profil';
       </div>
       <div>
         <label for="password">Mot de passe :</label>
-        <input type="text" name="password" id="password" value="">
+        <input type="password" name="password" id="password" value="">
         <p class="errors"><?= $errors['password'] ?? '' ?></p>
       </div>
       <div>

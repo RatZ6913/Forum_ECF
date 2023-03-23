@@ -1,6 +1,6 @@
 <?php
 ob_start();
-// $title = 'Messages';
+$title = 'Commentaires';
 require_once('./src/models/autoload.php');
 $comment = new Comment();
 $discussion = new Discussion();
@@ -25,18 +25,14 @@ $discussion = new Discussion();
             // Appelle la Vue deleteForm.view 
             require __DIR__ . './deleteForm.view.php';
           }
-          echo $comments['id_c'];
           ?>
           <small class="blue mr-5"><?= $comments['pseudo']; ?></small>
           <small class="italic"><?= $comments['date']; ?></small>
         </div>
       </section>
-
     <?php endforeach; ?>
-
   </article>
 </main>
 
 <?php
 $content = ob_get_clean();
-var_dump($_GET);

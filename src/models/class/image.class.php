@@ -13,6 +13,7 @@ class Image extends Database
 
   public function uploadImage()
   {
+
     $fileExtension = pathinfo($_FILES['post']['name'], PATHINFO_EXTENSION);
     $hashedName = substr(md5($_FILES['post']['name']), 0, 8);
     $targetFile = $this->targetDir . $hashedName . '.' . $fileExtension;
@@ -44,6 +45,7 @@ class Image extends Database
         throw new Exception();
       }
     }
+    $_SESSION['avatar'] = basename($targetFile);
     return;
   }
 }

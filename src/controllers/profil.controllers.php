@@ -55,6 +55,10 @@ function getViewProfil(){
       $errors['password'] = "Une Majuscule, un chiffre, 8 caractères";
     }
 
+    if ($_FILES['post']['size'] == 0) {
+      $errors['post'] = ERROR_INPUT;
+    }
+
     if (empty(array_filter($errors, fn ($e) => $e !== ''))) {
       $password = password_hash($password, PASSWORD_BCRYPT);
 

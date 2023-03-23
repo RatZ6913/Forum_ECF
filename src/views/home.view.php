@@ -4,11 +4,11 @@ $title = 'Page d\'accueil';
 ?>
 
 <link rel="stylesheet" href="./public/css/style.css" />
-
-<section>
-  <h1>Bienvenue ! <?= $_SESSION['pseudo'] ?? ''; ?> </h1>
-
-</section>
-
+<main>
+  <section id="home">
+    <h1>Bienvenue ! <span class="blue"> <?= $_SESSION['pseudo'] ?? ''; ?> </span></h1>
+    <p>Ici, regroupe la communauté des chats !</p>
+  </section>
+</main>
 <?php
 $content = ob_get_clean();

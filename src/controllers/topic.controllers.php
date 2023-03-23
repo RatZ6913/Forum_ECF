@@ -26,13 +26,16 @@ function getViewForum()
 
     // Vérifications des champs postForm
     if (!empty($_POST['submit'])) {
-      if (empty($_POST['alias']) || $_POST['alias'] === "") {
+      $messagePost = htmlspecialchars($_POST['message'], ENT_QUOTES, 'UTF-8') ?? '';
+      $aliasPost = htmlspecialchars($_POST['alias'], ENT_QUOTES, 'UTF-8') ?? '';
+
+      if (empty($messagePost) || $messagePost === "") {
         $errors['alias'] = EMPTY_INPUT;
       }
 
-      if (empty($_POST['message'])) {
+      if (empty($messagePost)) {
         $errors['error'] = ERROR_INPUT;
-      } else if (strlen($_POST['message']) > 45) {
+      } else if (strlen($messagePost) > 45) {
         $errors['error'] = ERROR_INPUT;
       }
 

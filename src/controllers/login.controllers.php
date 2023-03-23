@@ -6,7 +6,6 @@ if(!empty($_SESSION['pseudo'])){
 
 require_once('./src/models/class/user.class.php');
 
-
 const ERROR_CONNECT = "Vos identifiants ou mots de passes sont incorrects";
 const ERROR_EMPTY = "Veuillez rentrez vos informations";
 const ERROR_PATTERN = "Caractères invalides";
