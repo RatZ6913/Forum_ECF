@@ -16,7 +16,7 @@ class Like extends Database
     return $totalCount = $countLikeOfDiscussion->fetchAll();
   }
 
-  function checkIfUserLiked($idDiscussion, $idUsers) {
+  function checkIfUserLiked(string $idDiscussion, string $idUsers): array | bool {
     $checkIfUserLiked = $this->pdo->prepare("SELECT * FROM likes WHERE id_discussions = :idDiscussion AND id_users = :idUsers");
     $checkIfUserLiked->bindParam('idDiscussion', $idDiscussion);
     $checkIfUserLiked->bindParam('idUsers', $idUsers);
@@ -24,12 +24,12 @@ class Like extends Database
     return $checkIfLiked = $checkIfUserLiked->fetch();
   }
 
-  function updateLike(array $updateLike) {
+  function updateLike(array $updateLike): bool {
     $checkIfUserLiked = $this->pdo->prepare("UPDATE likes SET `like` = :liked WHERE id_discussions = :idDiscussion AND id_users = :idUser");
     return $checkIfUserLiked->execute($updateLike);
   }
 
-  function addLike(array $addLike) {
+  function addLike(array $addLike): bool {
     $checkIfUserLiked = $this->pdo->prepare("INSERT INTO likes (id_discussions, id_users, `like`) VALUES (:idDiscussion, :idUser, :liked)");
     return $checkIfUserLiked->execute($addLike);
   }
