@@ -15,6 +15,7 @@ function getViewMessage()
   $comment = new Comment();
   $message = new Message();
   $discussion = new Discussion();
+
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [

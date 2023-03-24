@@ -27,7 +27,7 @@ class Comment extends Database
     return $deleteComment->execute();
   }
 
-  function countComments($idDiscussion) {
+  function countComments(int $idDiscussion): string {
     $countComment = $this->pdo->prepare("SELECT COUNT(*) FROM comments WHERE id_discussions = :idDiscussion");
     $countComment->bindParam('idDiscussion', $idDiscussion);
     $countComment->execute();

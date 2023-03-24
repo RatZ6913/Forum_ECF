@@ -42,6 +42,19 @@ h2 {
   border-radius: 15px;
 }
 
+#info-comment a {
+  margin-top: 5px;
+}
+
+.far {
+  font-size: 20px;
+  color: #6c5b7b9e;
+}
+
+.far:hover {
+  color: #1f48ba;
+}
+
 .box-content {
   display: flex;
   align-items: center;
@@ -63,6 +76,10 @@ h2 {
 
 span {
   color: #EAB543;
+}
+
+#like {
+  text-decoration: none !important;
 }
 
 .link {

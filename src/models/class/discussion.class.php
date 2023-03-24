@@ -48,4 +48,18 @@ class Discussion extends Database
     $getCountDiscussions->execute();
     return $totalDiscussions = $getCountDiscussions->fetchColumn();
   }
+
+  function addLikeComment($liked, string $idDiscussion): bool {
+    $addLikeComment = $this->pdo->prepare("UPDATE discussion SET liked = :liked WHERE id_d = :idDiscussion");
+    $addLikeComment->bindParam('liked', $liked);
+    $addLikeComment->bindParam('idDiscussion', $idDiscussion);
+    return $addLikeComment->execute();
+  }
+  
+  function checkedIfLiked(string $idDiscussion): string | array {
+    $checkedIfLiked = $this->pdo->prepare("SELECT liked FROM discussion WHERE id_d = :idDiscussion");
+    $checkedIfLiked->bindParam('idDiscussion',$idDiscussion);
+    $checkedIfLiked->execute();
+    return $checkLiked = $checkedIfLiked->fetch();
+  }
 }
