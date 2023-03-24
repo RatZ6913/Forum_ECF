@@ -3,6 +3,12 @@ ob_start();
 $title = 'Déconnexion';
 ?>
 
+<script>
+    setTimeout(function(){
+        window.location.href = "./";
+    }, 5000);
+</script>
+
 <section id="disconnect">
   <div id="img-exit">
     <p>Meeoooooow !</p>
