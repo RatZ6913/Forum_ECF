@@ -14,7 +14,8 @@ $title = 'Page d\'accueil';
 
   <?php if (!empty($_SESSION['pseudo']) && isset($_SESSION['pseudo'])) : ?>
     <section id="connected">
-      <h1>Bienvenue ! <span class="blue"> <?= $_SESSION['pseudo'] ?? ''; ?> </span></h1>
+      <h1>Bienvenue ! <span class="blue"> <?= $_SESSION['pseudo'] ?? ''; ?> </span><br>
+        Sur <span class="blue"> Chat Chat-tche !</span></h1>
       <p class="text-center">Vous faîtes partie de notre communauté ! Meow <br>
         Vous avez accès aux forum !</p>
     </section>
