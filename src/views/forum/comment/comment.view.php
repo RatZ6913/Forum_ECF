@@ -8,10 +8,10 @@ $title = 'Commentaires';
 <main>
   <article id="main-box">
     <section id="info-comment">
-        <h2 class="text-center">Sujet de la discussion : <span>“<?= $infosDiscussion['title']; ?>”</span></h2>
-        <img src="./assets/images/uploads/<?= $infosDiscussion['avatar'] ?? '';; ?>">
-        <p>Auteur de la discussion : <span class="nameUser"><?= $infosDiscussion['pseudo']; ?></span></p>
-        <small>Le : <?= $infosDiscussion['date']; ?></small>
+      <h2 class="text-center">Sujet de la discussion : <span>“<?= $infosDiscussion['title']; ?>”</span></h2>
+      <img src="./assets/images/uploads/<?= $infosDiscussion['avatar'] ?? '';; ?>">
+      <p>Auteur de la discussion : <span class="nameUser"><?= $infosDiscussion['pseudo']; ?></span></p>
+      <small>Le : <?= $infosDiscussion['date']; ?></small>
     </section>
 
     <?php require_once __DIR__ . './postForm.view.php'; ?>

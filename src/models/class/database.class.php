@@ -5,8 +5,6 @@ class Database
   private $host = '127.0.0.1';
   private $port = '3306';
   private $database = 'forum_ecf';
-  // private $nameDB = 'root';
-  // private $password = '';
   private $nameDB;
   private $password;
   public $pdo;
@@ -14,8 +12,6 @@ class Database
   public function __construct() {
     $this->pdo = new PDO(
       'mysql:host=' . $this->host . ';port=' . $this->port . ';dbname=' . $this->database,
-      // $this->nameDB,
-      // $this->password,
       $this->nameDB = getenv('DB_NAME'),
       $this->password = getenv('DB_PWD'),
       [

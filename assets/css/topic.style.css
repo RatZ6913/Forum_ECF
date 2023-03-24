@@ -132,6 +132,7 @@ form textarea {
   border: none;
   padding: 5px;
   cursor: pointer;
+  box-shadow: 1px 1px 1px 1px #27627c;
 }
 
 #submit:hover, .btn-del:hover {

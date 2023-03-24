@@ -50,7 +50,7 @@ h2 {
   min-height: 5vh;
   padding: 15px;
   border: 1px solid #e1b12c;
-  background-color: #ccae6263;
+  background-color: #dedede63;
   border-radius: 10px;
 }
 
@@ -93,12 +93,13 @@ span {
   margin-right: 5px;
   font-weight: 500;
   text-decoration: underline;
+  font-size: 18px;
 }
 
 .date {
   font-style: italic;
   color: #3b3b3b;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #postForm  {
@@ -129,11 +130,12 @@ form textarea {
   text-align: center;
   width: 80px;
   margin: auto;
-  background-color: #f7f1e3;
+  background-color: #ffffff;
   color: brown;
   border: none;
   padding: 5px;
   cursor: pointer;
+  box-shadow: var(--box-shadow);
 }
 
 #submit:hover, .btn-del:hover {
