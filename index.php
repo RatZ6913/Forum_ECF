@@ -31,7 +31,7 @@ try {
       require_once('./src/controllers/comment.controllers.php');
       getViewComment();
     } else {
-      // Appelle la View Error si les actions ne sont pas égaux aux router
+      // Appelle la View Error si les actions ne sont pas égaux au router
       getViewError();
     }
   } else {
