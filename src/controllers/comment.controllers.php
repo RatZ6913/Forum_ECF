@@ -10,8 +10,12 @@ function getViewComment()
   $totalLikes = $like->countLikeOfDiscussion($_GET['id_d']);
   $countLikes = $totalLikes[0]["count(*)"];
 
+
+  // PARTIE : Boutton Likes 
+  // Vérifie si User a déjà Liké ou non 
   $checkLikedBtn = $like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']);
 
+  // Si existe pas 
   if ($checkLikedBtn == false) {
     $checkLikedBtn['like'] = 0;
 
@@ -20,9 +24,11 @@ function getViewComment()
       'idUser' => $_SESSION['id_user'],
       'liked' => $checkLikedBtn['like']
     ];
+    // J'assigne une valeur pour l'USER par défaut de 0(false)
     $like->addLike($updateLikes);
   }
 
+  // Quand User clique, fais les vérifs, avec une valeur de 0(false) par défaut, juste au-dessus
   if (isset($_GET['liked'])) {
     $updateLikes = [
       'idDiscussion' => $_GET['id_d'],
@@ -30,19 +36,21 @@ function getViewComment()
       'liked' => $checkLikedBtn['like'] ?? ''
     ];
 
-    if (isset($_GET['liked'])) {
-      if ((int)$_GET['liked'] == 0) {
-        $checkLikedBtn['like'] = 1;
-        $updateLikes['liked'] = $checkLikedBtn['like'];
-        $like->updateLike($updateLikes);
-      } else if ((int)$_GET['liked'] == 1) {
-        $checkLikedBtn['like'] = 0;
-        $updateLikes['liked'] = $checkLikedBtn['like'];
-        $like->updateLike($updateLikes);
-      }
+    // Si valeur = à 0(false), je le bascule à 1(true)
+    if ((int)$_GET['liked'] == 0) {
+      $checkLikedBtn['like'] = 1;
+      $updateLikes['liked'] = $checkLikedBtn['like'];
+      $like->updateLike($updateLikes);
+    }
+    // Et l'inverse ici. Ce qui permets à USER de liker/retirer son like
+    else if ((int)$_GET['liked'] == 1) {
+      $checkLikedBtn['like'] = 0;
+      $updateLikes['liked'] = $checkLikedBtn['like'];
+      $like->updateLike($updateLikes);
     }
     header("Location: ./?action=comment&id_d=" . $_GET['id_d']);
   }
+  // FIN Partie : BOUTTON LIKE 
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = new Comment();
