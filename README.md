@@ -18,9 +18,10 @@ Languages/logiciels utilisés : <br>
 
 
 <h4>Fonctionnalités :</h4>
-Inscription et connexion des utilisateurs
-Création de messages
-Affichage de la liste des messages
-Affichage d'un message en particulier avec ses commentaires
-Ajout de commentaires à un message
-Modification et suppression de messages et de commentaires (si l'utilisateur est propriétaire)
+Inscription connexion des utilisateurs & modification du profil
+Création de messages / topics / commentaires
+Affichage de la liste des messages / topics / commentaires
+Ajout/Suppression de messages et de commentaires
+Affichage des Avatars des utilisateurs
+Vérification des Chemins(URL)
+Ajout d'un like ou retrait d'un like, avec un compteur
