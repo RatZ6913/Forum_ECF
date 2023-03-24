@@ -18,10 +18,10 @@ Languages/logiciels utilisés : <br>
 
 
 <h4>Fonctionnalités :</h4>
-Inscription connexion des utilisateurs & modification du profil
-Création de messages / topics / commentaires
-Affichage de la liste des messages / topics / commentaires
-Ajout/Suppression de messages et de commentaires
-Affichage des Avatars des utilisateurs
-Vérification des Chemins(URL)
-Ajout d'un like ou retrait d'un like, avec un compteur
+ - Inscription connexion des utilisateurs & modification du profil <br>
+ - Création de messages / topics / commentaires <br>
+ - Affichage de la liste des messages / topics / commentaires <br>
+ - Ajout/Suppression de messages et de commentaires <br>
+ - Affichage des Avatars des utilisateurs <br>
+ - Vérification des Chemins(URL) <br>
+ - Ajout d'un like ou retrait d'un like, avec un compteur <br>
