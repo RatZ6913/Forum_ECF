@@ -1,24 +1,18 @@
 <?php
 
-function getViewComment() {
+function getViewComment()
+{
 
   $comment = new Comment();
   $discussion = new Discussion();
   $like = new Like();
   $infosDiscussion = $discussion->getInfosOfDiscussion($_GET['id_d']);
-
   $totalLikes = $like->countLikeOfDiscussion($_GET['id_d']);
   $countLikes = $totalLikes[0]["count(*)"];
-
-  // $like->checkIfUserLiked();
-
-  // var_dump($like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']));
-
-  $test = $like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']);
-
-  
-  if($test == true){
-    var_dump($test);
+  $checkLikedBtn = $like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']);
+ 
+  if(!$checkLikedBtn) {
+    $liked = 1;
   }
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -55,6 +49,22 @@ function getViewComment() {
       if ($_POST['id_comment']) {
         $comment->deleteComment($_POST['id_comment']);
       }
+    }
+  }
+
+  if(isset($_GET['liked'])) {
+    
+    $updateLikes = [
+      'idDiscussion' => $_GET['id_d'],
+      'idUser' => $_SESSION['id_user'],
+      'liked' => $liked ?? ''
+    ];
+
+    if(!$checkLikedBtn) {
+      // $liked = 1;
+      $like->addLike($updateLikes);
+    } else if ($checkLikedBtn) {
+      $liked = 0;
     }
   }
 

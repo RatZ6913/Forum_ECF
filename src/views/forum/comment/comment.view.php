@@ -10,8 +10,8 @@ $title = 'Commentaires';
     <section id="info-comment">
       <h2 class="text-center">Sujet de la discussion : <span>“<?= $infosDiscussion['title']; ?>”</span></h2>
       <img src="./assets/images/uploads/<?= $infosDiscussion['avatar'] ?? ''; ?>">
-      <a id="like" href="./?action=comment&id_d=<?= $_GET['id_d']; ?>&liked=test">
-        <i class="far fa-thumbs-up" <?= $test ? 'style="color:#1f48ba"' : '' ?>></i>
+      <a id="like" href="./?action=comment&id_d=<?= $_GET['id_d']; ?>&liked=<?= $liked; ?>">
+        <i class="far fa-thumbs-up" <?= $checkLikedBtn ? 'style="color:#1f48ba"' : '' ?>></i>
         <small><?= $countLikes ?></small>
       </a>
       <p>Auteur de la discussion : <span class="nameUser"><?= $infosDiscussion['pseudo']; ?></span></p>
