@@ -122,10 +122,10 @@ span {
 #postForm  {
   display: flex;
   flex-direction: column;
-  background-color: #aaa69d;
+  background-color: #b08c37;
   padding: 1rem;
   width: 50%;
-  margin: 1rem auto;
+  margin: 20px auto;
 }
 
 #postForm p {
@@ -135,12 +135,13 @@ span {
 #postForm form {
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 
 form textarea {
   margin: 10px;
+  min-height: 10vh;
 }
 
 #submit, .btn-del {
