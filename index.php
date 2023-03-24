@@ -31,12 +31,12 @@ try {
       require_once('./src/controllers/comment.controllers.php');
       getViewComment();
     } else {
-      // Appelle la View Error si les actions ne sont pas égales aux router
+      // Appelle la View Error si les actions ne sont pas égaux aux router
       getViewError();
     }
   } else {
     getViewHomePage();
   }
-} catch (Exception $e) {
+} catch (Exception) {
   getViewError();
 }
