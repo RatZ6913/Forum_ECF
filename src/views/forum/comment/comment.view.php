@@ -10,9 +10,9 @@ $title = 'Commentaires';
     <section id="info-comment">
       <h2 class="text-center">Sujet de la discussion : <span>“<?= $infosDiscussion['title']; ?>”</span></h2>
       <img src="./assets/images/uploads/<?= $infosDiscussion['avatar'] ?? ''; ?>">
-      <a id="like" href="./?action=comment&id_d=<?= $_GET['id_d']; ?>&liked=<?= (int)$checkIfLiked['liked']; ?>">
+      <a id="like" href="./?action=comment&id_d=<?= $_GET['id_d']; ?>&liked=test">
         <i class="far fa-thumbs-up"></i>
-        <small><?= $infosDiscussion['liked']; ?></small>
+        <small><?= $countLikes ?></small>
       </a>
       <p>Auteur de la discussion : <span class="nameUser"><?= $infosDiscussion['pseudo']; ?></span></p>
       <small>Le : <?= $infosDiscussion['date']; ?></small>
