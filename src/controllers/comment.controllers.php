@@ -10,6 +10,17 @@ function getViewComment() {
   $totalLikes = $like->countLikeOfDiscussion($_GET['id_d']);
   $countLikes = $totalLikes[0]["count(*)"];
 
+  // $like->checkIfUserLiked();
+
+  // var_dump($like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']));
+
+  $test = $like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']);
+
+  
+  if($test == true){
+    var_dump($test);
+  }
+
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = new Comment();
 
@@ -47,14 +58,6 @@ function getViewComment() {
     }
   }
 
-  // Isset car la valeur de $_GET['liked'] = string '0' // Donc !empty sera false
-  // if (isset($_GET['liked'])) {
-  //   if($_SESSION['id_user']) {
-
-  //   }
-  //   $discussion->addLikeComment($_GET['id_d']);
-  //   header("Location: ./?action=comment&id_d=" . $_GET['id_d']);
-  // }
   require_once('./src/views/forum/comment/comment.view.php');
   require_once('./src/views/templates/main.template.php');
 }

@@ -32,13 +32,11 @@ try {
       getViewComment();
     } else {
       // Appelle la View Error si les actions ne sont pas égales aux router
-      // getViewError();
+      getViewError();
     }
   } else {
-    // getViewHomePage();
-  throw new Exception($e->getMessage());
+    getViewHomePage();
   }
 } catch (Exception $e) {
-  // getViewError();
-  throw new Exception($e->getMessage());
+  getViewError();
 }
