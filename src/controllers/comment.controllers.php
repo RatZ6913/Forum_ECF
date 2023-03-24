@@ -9,10 +9,39 @@ function getViewComment()
   $infosDiscussion = $discussion->getInfosOfDiscussion($_GET['id_d']);
   $totalLikes = $like->countLikeOfDiscussion($_GET['id_d']);
   $countLikes = $totalLikes[0]["count(*)"];
+
   $checkLikedBtn = $like->checkIfUserLiked($_GET['id_d'], $_SESSION['id_user']);
- 
-  if(!$checkLikedBtn) {
-    $liked = 1;
+
+  if ($checkLikedBtn == false) {
+    $checkLikedBtn['like'] = 0;
+
+    $updateLikes = [
+      'idDiscussion' => $_GET['id_d'],
+      'idUser' => $_SESSION['id_user'],
+      'liked' => $checkLikedBtn['like']
+    ];
+    $like->addLike($updateLikes);
+  }
+
+  if (isset($_GET['liked'])) {
+    $updateLikes = [
+      'idDiscussion' => $_GET['id_d'],
+      'idUser' => $_SESSION['id_user'],
+      'liked' => $checkLikedBtn['like'] ?? ''
+    ];
+
+    if (isset($_GET['liked'])) {
+      if ((int)$_GET['liked'] == 0) {
+        $checkLikedBtn['like'] = 1;
+        $updateLikes['liked'] = $checkLikedBtn['like'];
+        $like->updateLike($updateLikes);
+      } else if ((int)$_GET['liked'] == 1) {
+        $checkLikedBtn['like'] = 0;
+        $updateLikes['liked'] = $checkLikedBtn['like'];
+        $like->updateLike($updateLikes);
+      }
+    }
+    header("Location: ./?action=comment&id_d=" . $_GET['id_d']);
   }
 
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,23 +80,6 @@ function getViewComment()
       }
     }
   }
-
-  if(isset($_GET['liked'])) {
-    
-    $updateLikes = [
-      'idDiscussion' => $_GET['id_d'],
-      'idUser' => $_SESSION['id_user'],
-      'liked' => $liked ?? ''
-    ];
-
-    if(!$checkLikedBtn) {
-      // $liked = 1;
-      $like->addLike($updateLikes);
-    } else if ($checkLikedBtn) {
-      $liked = 0;
-    }
-  }
-
   require_once('./src/views/forum/comment/comment.view.php');
   require_once('./src/views/templates/main.template.php');
 }
