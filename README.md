@@ -17,8 +17,10 @@ Languages/logiciels utilisés : <br>
 
 <h1> Nom du projet : Chat Chat-tche </h1>
 
-<h2>Description : </h2>
-  Examen 2ème partie, qui cible principalement le côté Back-end du développement Web.
+<h2> Mon premier projet en production sur un serveur WEB Linux via SSH </h2>
+
+<h3>Description : </h2>
+  Lors de l'examen de la deuxième partie du développement web, j'ai concentré mes efforts sur le développement Back-end avec l'architecture MVC. J'ai souhaité aller au-delà de mes compétences actuelles pour acquérir de nouvelles connaissances et compétences dans la production et la mise en ligne d'une application.
 
 
 <h4>Fonctionnalités :</h4>
