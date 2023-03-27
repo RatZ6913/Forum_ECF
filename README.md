@@ -1,7 +1,7 @@
 # Forum_ECF
 
-Fichiers : Dump.mysql, Diagram UML
-Architecture/Méthodes : MVC, CRUD
+Fichiers : Dump.mysql, Diagram UML <br>
+Architecture/Méthodes : MVC, CRUD <br>
 Languages/logiciels utilisés : <br>
 
 [![VS Code](https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)](https://code.visualstudio.com/)
