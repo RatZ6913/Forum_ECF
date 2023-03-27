@@ -12,6 +12,7 @@ Languages/logiciels utilisés : <br>
 [![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 [![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](https://docs.microsoft.com/en-us/powershell/)
+[![VPS OVH](https://img.shields.io/badge/VPS_OVH-123F6D?style=for-the-badge&logo=ovh&logoColor=white)](https://www.ovh.com/vps/)
 
 
 <h1> Nom du projet : Chat Chat-tche </h1>
