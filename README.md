@@ -11,8 +11,9 @@ Languages/logiciels utilisés : <br>
 [![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
-[![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](https://docs.microsoft.com/en-us/powershell/)
+[![Git Bash](https://img.shields.io/badge/Git_Bash-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/downloads)
 [![VPS OVH](https://img.shields.io/badge/VPS_OVH-123F6D?style=for-the-badge&logo=ovh&logoColor=white)](https://www.ovh.com/vps/)
+[![SSH](https://img.shields.io/badge/SSH-4C4C4D?style=for-the-badge&logo=ssh&logoColor=white)](https://fr
 
 
 <h1> Nom du projet : Chat Chat-tche </h1>
