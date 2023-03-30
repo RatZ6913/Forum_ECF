@@ -13,7 +13,7 @@ Languages/logiciels utilisés : <br>
 [![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)](https://ubuntu.com/)
 [![Git Bash](https://img.shields.io/badge/Git_Bash-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/downloads)
 [![VPS OVH](https://img.shields.io/badge/VPS_OVH-123F6D?style=for-the-badge&logo=ovh&logoColor=white)](https://www.ovh.com/vps/)
-[![SSH](https://img.shields.io/badge/SSH-4C4C4D?style=for-the-badge&logo=ssh&logoColor=white)]
+!SSH(https://img.shields.io/badge/SSH-4C4C4D?style=for-the-badge&logo=ssh&logoColor=white)
 
 <h1> Nom du projet : Chat Chat-tche </h1>
 
